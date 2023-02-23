@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Python入门</title>
+      <link href="/2023/02/22/Python1/"/>
+      <url>/2023/02/22/Python1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一-初始Python"><a href="#一-初始Python" class="headerlink" title="一.初始Python"></a>一.初始Python</h1><h2 id="1-Python安装"><a href="#1-Python安装" class="headerlink" title="1. Python安装"></a>1. Python安装</h2><p>Python官网：<a href="https://www.python.org/">https://www.python.org/</a></p><p>点击download下载</p><p><a href="https://raw.githubusercontent.com/icyhalo/picgo/main/img/20230221205810.png">https://raw.githubusercontent.com/icyhalo/picgo/main/img/20230221205810.png</a></p><p><a href="https://raw.githubusercontent.com/icyhalo/picgo/main/img/20230221210948.png">https://raw.githubusercontent.com/icyhalo/picgo/main/img/20230221210948.png</a></p><p>将下面的√，√上，图中我的已勾选，接着傻瓜式安装</p><p>如果没有勾选，在用命令提示符运行Python可能出现</p><p><a href="https://raw.githubusercontent.com/icyhalo/picgo/main/img/20230221212539.png">https://raw.githubusercontent.com/icyhalo/picgo/main/img/20230221212539.png</a></p><p>出现该问题，重新安装Python即可</p><h2 id="2-第一个Python程序"><a href="#2-第一个Python程序" class="headerlink" title="2. 第一个Python程序"></a>2. 第一个Python程序</h2><p>老规矩，hello world</p><p><a href="https://raw.githubusercontent.com/icyhalo/picgo/main/img/20230221212007.png">https://raw.githubusercontent.com/icyhalo/picgo/main/img/20230221212007.png</a></p><p><a href="https://raw.githubusercontent.com/icyhalo/picgo/main/img/20230221215926.png">https://raw.githubusercontent.com/icyhalo/picgo/main/img/20230221215926.png</a></p><blockquote><p>编程语言中的符号记得纯英文</p></blockquote><h2 id="3-Python解释器"><a href="#3-Python解释器" class="headerlink" title="3. Python解释器"></a>3. Python解释器</h2><p>Python解释器是一个计算机程序，用来翻译Python程序并提交给计算机执行。</p><p>它的功能简单：</p><ul><li>翻译代码</li><li>提交给计算机运行</li></ul><p>.py文件：让Python解释器运行的文件</p><h2 id="4-Python开发环境"><a href="#4-Python开发环境" class="headerlink" title="4. Python开发环境"></a>4. Python开发环境</h2><p>Python开发程序常见的有：</p><ul><li>Python解释器环境内，执行单元代码</li><li>使用Python解释器程序，执行Python代码文件（ .py文件）</li><li><strong>都用第三方IDE(集成开发工具)，如PyCharm</strong></li></ul><p>PyCharm是当下全球Python开发最主流的工具</p><p>PyCharm官网：<a href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a></p><p>PyCharm快捷键：</p><ul><li>ctrl + alt + s：打开软件设置</li><li>ctrl + d：复制当前代码</li><li>shift + alt +  上|下：将当前代码上 | 下移</li><li>ctrl + shift + f10：运行当前代码</li><li>shift + f6 ：重命名文件</li><li>ctrl + a|c|v|x|f：复制、黏贴、剪切、搜索</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程语言 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python 编程语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2023/02/22/hello-world/"/>
+      <url>/2023/02/22/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>

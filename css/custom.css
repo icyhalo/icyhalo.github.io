@@ -57,7 +57,7 @@
   left: -125px;
 }
 
-#霓虹灯
+/*霓虹灯*/
 /* 日间模式不生效 */
 [data-theme="light"] #site-name,
 [data-theme="light"] #site-title,

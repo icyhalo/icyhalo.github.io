@@ -1,0 +1,474 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>DOM | Icyhaloの糖果屋</title><meta name="author" content="冰晕"><meta name="copyright" content="冰晕"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Web APIs 介绍ECMAScript 简称 ES 它提供了一套语言标准规范，如变量、数据类型、表达式、语句、函数等语法规则都是由 ECMAScript 规定的。浏览器将 ECMAScript 大部分的规范加以实现，并且在此基础上又扩展一些实用的功能，这些被扩展出来的内容我们称为 Web APIs  ECMAScript 运行在浏览器中然后再结合 Web APIs 才是真正的 JavaScri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM">
+<meta property="og:url" content="http://example.com/2023/03/31/JS.2/index.html">
+<meta property="og:site_name" content="Icyhaloの糖果屋">
+<meta property="og:description" content="Web APIs 介绍ECMAScript 简称 ES 它提供了一套语言标准规范，如变量、数据类型、表达式、语句、函数等语法规则都是由 ECMAScript 规定的。浏览器将 ECMAScript 大部分的规范加以实现，并且在此基础上又扩展一些实用的功能，这些被扩展出来的内容我们称为 Web APIs  ECMAScript 运行在浏览器中然后再结合 Web APIs 才是真正的 JavaScri">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg">
+<meta property="article:published_time" content="2023-03-31T10:29:56.391Z">
+<meta property="article:modified_time" content="2023-04-21T04:41:33.597Z">
+<meta property="article:author" content="冰晕">
+<meta property="article:tag" content="前端 JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/31/JS.2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":100},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 冰晕","link":"链接: ","source":"来源: Icyhaloの糖果屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'DOM',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2023-04-21 12:41:33'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://www.fomal.cc/static/css/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/FeeCpEnVIAAPn7.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Icyhaloの糖果屋"><span class="site-name">Icyhaloの糖果屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">DOM</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-31T10:29:56.391Z" title="发表于 2023-03-31 18:29:56">2023-03-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-21T04:41:33.597Z" title="更新于 2023-04-21 12:41:33">2023-04-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="DOM"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Web-APIs-介绍"><a href="#Web-APIs-介绍" class="headerlink" title="Web APIs 介绍"></a>Web APIs 介绍</h1><p>ECMAScript 简称 ES 它提供了一套语言标准规范，如变量、数据类型、表达式、语句、函数等语法规则都是由 ECMAScript 规定的。浏览器将 ECMAScript 大部分的规范加以实现，并且在此基础上又扩展一些实用的功能，这些被扩展出来的内容我们称为 Web APIs</p>
+<p><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/20230331200257.png"></p>
+<p>ECMAScript 运行在浏览器中然后再结合 Web APIs 才是真正的 JavaScript，Web APIs 的核心是 <strong>DOM</strong> 和 <strong>BOM</strong></p>
+<p>作用: 就是使用 JS 去操作 html 和浏览器</p>
+<p>分类：DOM (文档对象模型)、BOM（浏览器对象模型）</p>
+<p><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/20230401142525.png"></p>
+<h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>DOM（ Document Object Model——文档对象模型 ）是用来呈现以及与任意 HTML 或 XML文档交互的API，DOM是浏览器提供的一套专门用来 <strong>操作网页内容</strong> 的功能</p>
+<p>作用：开发网页内容特效和实现用户交互</p>
+<h2 id="1-DOM-树"><a href="#1-DOM-树" class="headerlink" title="1 DOM 树"></a>1 DOM 树</h2><p>如下图所示，将 HTML 文档以树状结构直观的表现出来，我们称之为文档树或 DOM 树，</p>
+<p>作用：文档树直观的体现了标签与标签之间的关系</p>
+<p><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/20230331201548.png"></p>
+<h2 id="2-DOM-对象"><a href="#2-DOM-对象" class="headerlink" title="2 DOM 对象"></a>2 DOM 对象</h2><p><strong>节点</strong>是文档树的组成部分，每一个节点都是一个 <strong>DOM 对象</strong>，主要分为<strong>元素节点</strong>、<strong>属性节点</strong>、<strong>文本节点</strong>等。</p>
+<p>节点类型：</p>
+<ol>
+<li>元素节点：就是 HTML 标签，如上图中 <code>head</code>、<code>div</code>、<code>body</code> 等都属于元素节点。</li>
+<li>属性节点：是指 HTML 标签中的属性，如上图中 <code>a</code> 标签的 <code>href</code> 属性、<code>div</code> 标签的 <code>class</code> 属性。</li>
+<li>文本节点：是指 HTML 标签的文字内容，如 <code>title</code> 标签中的文字。</li>
+<li>根节点：特指 <code>html</code> 标签</li>
+</ol>
+<p>DOM对象：浏览器根据html标签生成的 JS对象，所有的标签属性都可以在这个对象上面找到，修改这个对象的属性会自动映射到标签身上</p>
+<p>DOM的核心思想：把网页内容当做对象来处理</p>
+<h2 id="3-document"><a href="#3-document" class="headerlink" title="3 document"></a>3 document</h2><p><code>document</code> 是 JavaScript 内置的专门用于 DOM 的对象，该对象包含了若干的属性和方法，它提供的属性和方法都是<strong>用来访问和操作网页内容的</strong>，网页所有内容都在document里面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  // document 是内置的对象</span><br><span class="line">  // console.log(typeof document);</span><br><span class="line">  // 1. 通过 document 获取根节点</span><br><span class="line">  console.log(document.documentElement); // 对应 html 标签</span><br><span class="line">  </span><br><span class="line">  // 2. 通过 document 节取 body 节点</span><br><span class="line">  console.log(document.body); // 对应 body 标签</span><br><span class="line">  </span><br><span class="line">  // 3. 通过 document.write 方法向网页输出内容</span><br><span class="line">  document.write(&#x27;Hello World!&#x27;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-获取DOM对象"><a href="#4-获取DOM对象" class="headerlink" title="4 获取DOM对象"></a>4 获取DOM对象</h2><h3 id="4-1-变量声明"><a href="#4-1-变量声明" class="headerlink" title="4.1 变量声明"></a>4.1 变量声明</h3><p>声明变量可以用 let 和 const，建议 const 优先，尽量使用const，如果发现它后面是要被修改的，再改为let</p>
+<blockquote>
+<p>const 声明的值不能更改，而且 const 声明变量的时候需要里面进行初始化</p>
+</blockquote>
+<p>JavaScript 中，改变<strong>数组</strong>和<strong>对象</strong>中的内容不影响对其定位，变量仍然指向该变量，可以用 const 定义数组和对象</p>
+<blockquote>
+<p>对于引用数据类型，const声明的变量，里面存的不是值，不是值，不是值，是<strong>地址</strong></p>
+</blockquote>
+<h3 id="4-2-根据CSS选择器来获取DOM元素"><a href="#4-2-根据CSS选择器来获取DOM元素" class="headerlink" title="4.2 根据CSS选择器来获取DOM元素"></a>4.2 根据CSS选择器来获取DOM元素</h3><p><strong>查找元素DOM元素就是利用 JS 选择页面中标签元素</strong></p>
+<ol>
+<li>选择匹配的第一个元素</li>
+</ol>
+<p><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const p = document.querySelector(&#x27;p&#x27;)  // 获取第一个 p 元素</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong>：包含一个或多个有效的CSS选择器 <strong>字符串</strong>（字符串输入要加引号）</p>
+<p><strong>返回值</strong>：CSS选择器匹配的第一个元素，一个 HTMLElement对象，如果没有匹配到，则返回null</p>
+<p>可以直接使用变量修改</p>
+<ol start="2">
+<li>选择匹配的多个元素</li>
+</ol>
+<p><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const lis = document.querySelectorAll(&#x27;li&#x27;)  // 获取第一个 li 元素</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong>：包含一个或多个有效的CSS选择器 <strong>字符串</strong>（字符串输入要加引号）</p>
+<p><strong>返回值</strong>：CSS选择器匹配的NodeList 对象集合，返回伪数组</p>
+<p>不可以直接使用变量修改，变量接受的是一个伪数组，只能通过遍历的方式一次给里面的元素做修改</p>
+<h3 id="4-3-其他获取DOM元素方法"><a href="#4-3-其他获取DOM元素方法" class="headerlink" title="4.3 其他获取DOM元素方法"></a>4.3 其他获取DOM元素方法</h3><h2 id="查找节点"><a href="#查找节点" class="headerlink" title="查找节点"></a>查找节点</h2><p>DOM 树中的任意节点都不是孤立存在的，它们要么是父子关系，要么是兄弟关系，不仅如此，我们可以依据节点之间的关系查找节点</p>
+<p>父节点查找：</p>
+<ul>
+<li>子元素.parentNode</li>
+<li>返回最近一级的父节点 找不到返回为null</li>
+</ul>
+<p>子节点查找：</p>
+<ol>
+<li>父元素.childNodes：获得所有子节点、包括文本节点（空格、换行）、注释节点等</li>
+<li>父元素.children：仅获得所有元素节点，返回的还是一个<strong>伪数组</strong></li>
+</ol>
+<p>兄弟关系查找：</p>
+<ol>
+<li>下一个兄弟节点：nextElementSibling</li>
+<li>上一个兄弟节点：previousElementSibling</li>
+</ol>
+<p>结论：</p>
+<ul>
+<li><code>childNodes</code> 获取全部的子节点，回车换行会被认为是空白文本节点</li>
+<li><code>children</code> 只获取元素类型节点</li>
+<li><code>parentNode</code> 获取父节点，以相对位置查找节点，实际应用中非常灵活</li>
+<li><code>previousSibling</code> 获取前一个节点，以相对位置查找节点，实际应用中非常灵活。</li>
+<li><code>nextSibling</code> 获取后一个节点，以相对位置查找节点，实际应用中非常灵活</li>
+</ul>
+<h2 id="增加节点"><a href="#增加节点" class="headerlink" title="增加节点"></a>增加节点</h2><ol>
+<li><p>创建节点</p>
+</li>
+<li><p>插入节点</p>
+</li>
+</ol>
+<p>在已有的 DOM 节点中插入新的 DOM 节点时，需要关注两个关键因素：首先要得到新的 DOM 节点，其次在哪个位置插入这个节点</p>
+<p>结论：</p>
+<ul>
+<li><p><code>createElement</code> 动态创建任意 DOM 节点</p>
+</li>
+<li><p><code>cloneNode</code> 复制现有的 DOM 节点，传入参数 true 会复制所有子节点</p>
+</li>
+<li><p><code>appendChild</code> 在末尾（结束标签前）插入节点</p>
+</li>
+<li><p><code>insertBefore</code> 在父节点中任意子节点之前插入新节点</p>
+</li>
+</ul>
+<h2 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h2><p>在 JavaScript 原生DOM操作中，要删除元素<strong>必须通过父元素删除</strong></p>
+<p>删除现有的 DOM 节点，也需要关注两个因素：首先由父节点删除子节点，其次是要删除哪个子节点。</p>
+<p>父元素.removeChild（要删除的元素）</p>
+<p>结论：<code>removeChild</code> 删除节点时一定是由父子关系</p>
+<h2 id="5-操作元素内容"><a href="#5-操作元素内容" class="headerlink" title="5 操作元素内容"></a>5 操作元素内容</h2><p>通过修改 DOM 的文本内容，动态改变网页的内容</p>
+<p><code>innerText</code> 将文本内容添加&#x2F;更新到任意标签位置，文本中包含的<strong>标签不会被解析</strong></p>
+<p><code>innerHTML</code> 将文本内容添加&#x2F;更新到任意标签位置，文本中包含的<strong>标签会被解析</strong></p>
+<blockquote>
+<p>如果文本内容中包含 <code>html</code> 标签时推荐使用 <code>innerHTML</code>，否则建议使用 <code>innerText</code> 属性</p>
+</blockquote>
+<p>获取对象后修改内容属性生效</p>
+<h2 id="6-操作元素属性"><a href="#6-操作元素属性" class="headerlink" title="6 操作元素属性"></a>6 操作元素属性</h2><h3 id="6-1-常用属性修改"><a href="#6-1-常用属性修改" class="headerlink" title="6.1 常用属性修改"></a>6.1 常用属性修改</h3><p>直接能过属性名修改，最简洁的语法</p>
+<p>最常见的属性比如： href、title、src 等</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 1. 获取 DOM 元素</span><br><span class="line">const pic = document.querySelector(&#x27;.pic&#x27;)</span><br><span class="line">// 2. 修改属性</span><br><span class="line">// 对象.属性 = 值</span><br><span class="line">pic.src = &#x27;./images&#x27;</span><br><span class="line">pic.alt = &#x27;图片不见了...&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-样式属性修改"><a href="#6-2-样式属性修改" class="headerlink" title="6.2 样式属性修改"></a>6.2 样式属性修改</h3><h4 id="6-2-1-通过-style-修改样式"><a href="#6-2-1-通过-style-修改样式" class="headerlink" title="6.2.1 通过 style 修改样式"></a>6.2.1 通过 style 修改样式</h4><p>通过修改行内样式 <strong>style</strong> 属性，实现对样式的动态修改</p>
+<blockquote>
+<p>通过元素节点获得的 <code>style</code> 属性本身的数据类型也是对象</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 1. 获取 DOM 节点</span><br><span class="line">const box = document.querySelector(&#x27;.intro&#x27;)</span><br><span class="line">// 2. 修改属性</span><br><span class="line">//赋值的时候，需要的时候不要忘记加css单位</span><br><span class="line">box.style.width = &#x27;300px&#x27;</span><br><span class="line">// css 属性的 - 连接符与 JavaScript 的 减运算符</span><br><span class="line">// 冲突，所以要改成驼峰法</span><br><span class="line">box.style.backgroundColor = &#x27;pink&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>任何标签都有 <code>style</code> 属性，通过 <code>style</code> 属性可以动态更改网页标签的样式，如要遇到 <code>css</code> 属性中包含字符 <code>-</code> 时，要将 <code>-</code> 去掉并将其后面的字母改成大写，如 <code>background-color</code> 要写成 <code>box.style.backgroundColor</code></p>
+<blockquote>
+<p>样式属性，一定别忘记，大部分数字后面都需要加单位，加单位的是字符串类型，要加引号</p>
+</blockquote>
+<h4 id="6-2-2-通过-className-修改样式"><a href="#6-2-2-通过-className-修改样式" class="headerlink" title="6.2.2 通过 className 修改样式"></a>6.2.2 通过 className 修改样式</h4><p>如果修改的样式比较多，直接通过style属性修改比较繁琐，我们可以通过借助于css类名的形式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 获取 DOM 节点</span><br><span class="line">const box = document.querySelector(&#x27;.intro&#x27;)</span><br><span class="line">//给类对象重新赋值，更改类（覆盖更改）</span><br><span class="line">box.className = &#x27;pink&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ol>
+<li>由于class是关键字，所以使用className去代替</li>
+<li>className是使用新值换旧值，如果需要添加一个类，需要保留之前的类名</li>
+<li>可以使用多类来保留之前的类，多个类共同作用</li>
+</ol>
+<h4 id="6-2-3-classList"><a href="#6-2-3-classList" class="headerlink" title="6.2.3 classList"></a>6.2.3 classList</h4><p>为了解决className 容易覆盖以前的类名，我们可以通过classList方式追加和删除类名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 获取 DOM 对象</span><br><span class="line">const box = document.querySelector(&#x27;.intro&#x27;)</span><br><span class="line">//给类对象追加一个类</span><br><span class="line">box.classList.add（&#x27;类名&#x27;）</span><br><span class="line">//给类对象删除一个类</span><br><span class="line">box.classList.remove（&#x27;类名&#x27;）</span><br><span class="line">//给类对象切换一个类</span><br><span class="line">box.classList.toggle（&#x27;类名&#x27;）</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>切换相当于取非，之前没有就加，有就删除</p>
+</blockquote>
+<p>使用 className 和classList的区别</p>
+<ol>
+<li>修改大量样式的更方便</li>
+<li>修改不多样式的时候方便</li>
+<li>classList 是追加和删除不影响以前类名</li>
+</ol>
+<h3 id="6-3-操作表单元素属性"><a href="#6-3-操作表单元素属性" class="headerlink" title="6.3 操作表单元素属性"></a>6.3 操作表单元素属性</h3><p>表单属性中添加就有效果,移除就没有效果,一律使用布尔值表示 如果为true 代表添加了该属性 如果是false 代表移除了该属性，比如： disabled、checked、selected</p>
+<p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//获取 DOM 对象，DOM对象.属性名</span><br><span class="line">const uname = document.querySelector(&#x27;input&#x27;)</span><br><span class="line">//修改属性值，DOM对象.属性名 = 新值</span><br><span class="line">uname.type = &#x27;password&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-4-自定义属性"><a href="#6-4-自定义属性" class="headerlink" title="6.4 自定义属性"></a>6.4 自定义属性</h3><p>标准属性: 标签天生自带的属性 比如class id title等, 可以直接使用点语法操作比如： disabled、checked、selected</p>
+<p>自定义属性：在html5中推出来了专门的data-自定义属性 ，在标签上一律以 <strong>data-</strong> 开头，在DOM对象上一律以 <strong>dataset</strong> 对象方式获取</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 1. 获取元素</span><br><span class="line">let div = document.querySelector(&#x27;div&#x27;)</span><br><span class="line">// 2. 获取自定义属性值</span><br><span class="line">console.log(div.dataset.id)</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">冰晕</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/31/JS.2/">http://example.com/2023/03/31/JS.2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Icyhaloの糖果屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF-JavaScript/">前端 JavaScript</a></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/25/JS.1/" title="JavaScript基础"><img class="cover" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JavaScript基础</div></div></a></div><div class="next-post pull-right"><a href="/2023/04/03/JS.3/" title="DOM 事件"><img class="cover" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">DOM 事件</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/03/25/JS.1/" title="JavaScript基础"><img class="cover" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-25</div><div class="title">JavaScript基础</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/FeeCpEnVIAAPn7.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">冰晕</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/"><i class="fab fa-github"></i><span>前往糖果屋</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-APIs-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">Web APIs 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DOM"><span class="toc-number">2.</span> <span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-DOM-%E6%A0%91"><span class="toc-number">2.1.</span> <span class="toc-text">1 DOM 树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DOM-%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.2.</span> <span class="toc-text">2 DOM 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-document"><span class="toc-number">2.3.</span> <span class="toc-text">3 document</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%8E%B7%E5%8F%96DOM%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.4.</span> <span class="toc-text">4 获取DOM对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="toc-number">2.4.1.</span> <span class="toc-text">4.1 变量声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%A0%B9%E6%8D%AECSS%E9%80%89%E6%8B%A9%E5%99%A8%E6%9D%A5%E8%8E%B7%E5%8F%96DOM%E5%85%83%E7%B4%A0"><span class="toc-number">2.4.2.</span> <span class="toc-text">4.2 根据CSS选择器来获取DOM元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%85%B6%E4%BB%96%E8%8E%B7%E5%8F%96DOM%E5%85%83%E7%B4%A0%E6%96%B9%E6%B3%95"><span class="toc-number">2.4.3.</span> <span class="toc-text">4.3 其他获取DOM元素方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E8%8A%82%E7%82%B9"><span class="toc-number">2.5.</span> <span class="toc-text">查找节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E8%8A%82%E7%82%B9"><span class="toc-number">2.6.</span> <span class="toc-text">增加节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="toc-number">2.7.</span> <span class="toc-text">删除节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="toc-number">2.8.</span> <span class="toc-text">5 操作元素内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7"><span class="toc-number">2.9.</span> <span class="toc-text">6 操作元素属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%E4%BF%AE%E6%94%B9"><span class="toc-number">2.9.1.</span> <span class="toc-text">6.1 常用属性修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7%E4%BF%AE%E6%94%B9"><span class="toc-number">2.9.2.</span> <span class="toc-text">6.2 样式属性修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-1-%E9%80%9A%E8%BF%87-style-%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.9.2.1.</span> <span class="toc-text">6.2.1 通过 style 修改样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-2-%E9%80%9A%E8%BF%87-className-%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.9.2.2.</span> <span class="toc-text">6.2.2 通过 className 修改样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-3-classList"><span class="toc-number">2.9.2.3.</span> <span class="toc-text">6.2.3 classList</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E6%93%8D%E4%BD%9C%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7"><span class="toc-number">2.9.3.</span> <span class="toc-text">6.3 操作表单元素属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-number">2.9.4.</span> <span class="toc-text">6.4 自定义属性</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/10/26/Java%E9%9B%86%E5%90%88/" title="Java集合"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java集合"/></a><div class="content"><a class="title" href="/2023/10/26/Java%E9%9B%86%E5%90%88/" title="Java集合">Java集合</a><time datetime="2023-10-26T05:53:07.392Z" title="发表于 2023-10-26 13:53:07">2023-10-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/26/Mbatis/" title="Mybatis"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mybatis"/></a><div class="content"><a class="title" href="/2023/10/26/Mbatis/" title="Mybatis">Mybatis</a><time datetime="2023-10-26T05:53:07.391Z" title="发表于 2023-10-26 13:53:07">2023-10-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/26/Java%E5%8F%8D%E5%B0%84/" title="Java反射"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java反射"/></a><div class="content"><a class="title" href="/2023/10/26/Java%E5%8F%8D%E5%B0%84/" title="Java反射">Java反射</a><time datetime="2023-10-26T05:53:07.383Z" title="发表于 2023-10-26 13:53:07">2023-10-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 冰晕</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/前端/&quot;);" href="javascript:void(0);">前端</a><span class="categoryBar-list-count">8</span><span class="categoryBar-list-descr">各类主流的编程语言</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JDBC/&quot;);" href="javascript:void(0);">JDBC</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/编程语言-Java/&quot;);" href="javascript:void(0);">编程语言 Java</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Java/&quot;);" href="javascript:void(0);">Java</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JVM/&quot;);" href="javascript:void(0);">JVM</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/编程语言/&quot;);" href="javascript:void(0);">编程语言</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/框架/&quot;);" href="javascript:void(0);">框架</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Spring/&quot;);" href="javascript:void(0);">Spring</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/后端/&quot;);" href="javascript:void(0);">后端</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/数据结构/&quot;);" href="javascript:void(0);">数据结构</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/计算机网络/&quot;);" href="javascript:void(0);">计算机网络</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-66ccff?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Vercel" title=""><img src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于4EVERLAND" title=""><img src="https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/02/22/hello-world/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/TEHSN5228DVNJ0IKG8LMEF5.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-02-22</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/02/22/hello-world/&quot;);" href="javascript:void(0);" alt="">至每一个来到这里的人</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/02/22/hello-world/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/06/06/计算机网络.4/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-06-06</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/06/06/计算机网络.4/&quot;);" href="javascript:void(0);" alt="">计算机网络-物理层</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/06/06/计算机网络.4/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/04/27/计算机网络.2/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/04/27/计算机网络.2/&quot;);" href="javascript:void(0);" alt="">计算机网络-应用层</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/04/27/计算机网络.2/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/05/14/计算机网络.3/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-05-14</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/05/14/计算机网络.3/&quot;);" href="javascript:void(0);" alt="">计算机网络-运输层</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/05/14/计算机网络.3/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/05/丁奇MySql/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-05</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/05/丁奇MySql/&quot;);" href="javascript:void(0);" alt="">丁奇MySql</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/05/丁奇MySql/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/06/04/数据结构.1/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-06-04</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/06/04/数据结构.1/&quot;);" href="javascript:void(0);" alt="">数据结构-绪论</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/06/04/数据结构.1/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/04/27/计算机网络.1/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/04/27/计算机网络.1/&quot;);" href="javascript:void(0);" alt="">计算机网络-引言</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/04/27/计算机网络.1/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/06/04/数据结构.2/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-06-04</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/06/04/数据结构.2/&quot;);" href="javascript:void(0);" alt="">数据结构-线性表</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/06/04/数据结构.2/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/25/SpringBoot/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-25</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/25/SpringBoot/&quot;);" href="javascript:void(0);" alt="">SpringBoot</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/25/SpringBoot/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/05/mysql进阶/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-05</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/05/mysql进阶/&quot;);" href="javascript:void(0);" alt="">Java-接口</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/05/mysql进阶/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/12/Spring入门.1/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-12</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/12/Spring入门.1/&quot;);" href="javascript:void(0);" alt="">Spring入门</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/12/Spring入门.1/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/09/maven基础/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/09/maven基础/&quot;);" href="javascript:void(0);" alt="">maven基础</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/09/maven基础/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/25/SSM整合/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-25</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/25/SSM整合/&quot;);" href="javascript:void(0);" alt="">SSM整合+拦截器</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/25/SSM整合/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/08/SSM-SpringMVC/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-08</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/08/SSM-SpringMVC/&quot;);" href="javascript:void(0);" alt="">SpringMVC</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/08/SSM-SpringMVC/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/07/SSM-Spring03/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-07</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/07/SSM-Spring03/&quot;);" href="javascript:void(0);" alt=""></a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/07/SSM-Spring03/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/05/SSM-Spring02/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-05</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/05/SSM-Spring02/&quot;);" href="javascript:void(0);" alt="">Spring-Ioc</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/05/SSM-Spring02/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/05/SSM-Spring01/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-05</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/05/SSM-Spring01/&quot;);" href="javascript:void(0);" alt="">Spring入门-相关概念</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/05/SSM-Spring01/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/26/Mbatis/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-26</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/26/Mbatis/&quot;);" href="javascript:void(0);" alt="">Mybatis</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/26/Mbatis/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/25/Maven高级/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-25</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/25/Maven高级/&quot;);" href="javascript:void(0);" alt="">Maven高级</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/25/Maven高级/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/26/Java集合/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-26</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/26/Java集合/&quot;);" href="javascript:void(0);" alt="">Java集合</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/26/Java集合/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/18/Java字符串/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-18</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/18/Java字符串/&quot;);" href="javascript:void(0);" alt="">Java字符串</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/18/Java字符串/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/17/Java常用类/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-17</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/17/Java常用类/&quot;);" href="javascript:void(0);" alt="">Java常用类</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/17/Java常用类/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/07/Java.结构/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-07</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/07/Java.结构/&quot;);" href="javascript:void(0);" alt="">Java流程结构</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/07/Java.结构/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/16/JavaJDBC/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-16</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/16/JavaJDBC/&quot;);" href="javascript:void(0);" alt="">Java-JDBC</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/16/JavaJDBC/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/26/Java多线程/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-26</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/26/Java多线程/&quot;);" href="javascript:void(0);" alt="">Java多线程</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/26/Java多线程/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/26/Java反射/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-26</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/26/Java反射/&quot;);" href="javascript:void(0);" alt="">Java反射</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/26/Java反射/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/16/Java.泛型/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/B6EB41B6BD6C659917074A68724D79A6.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-16</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/16/Java.泛型/&quot;);" href="javascript:void(0);" alt="">Java-泛型</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/16/Java.泛型/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/10/Java.数组/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/1562394500344.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-10</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/10/Java.数组/&quot;);" href="javascript:void(0);" alt="">Java数组</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/10/Java.数组/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/04/20/JS.5/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-20</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/04/20/JS.5/&quot;);" href="javascript:void(0);" alt="">作用域、函数、数组进阶</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/04/20/JS.5/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/07/Java.操作符/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-07</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/07/Java.操作符/&quot;);" href="javascript:void(0);" alt="">Java-运算符、输入输出</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/07/Java.操作符/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/18/Java.异常/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-18</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/18/Java.异常/&quot;);" href="javascript:void(0);" alt="">Java异常</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/18/Java.异常/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/12/JVM.内存结构/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-12</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/12/JVM.内存结构/&quot;);" href="javascript:void(0);" alt="">JVM内存结构</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/12/JVM.内存结构/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/09/07/Java.变量/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-09-07</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/09/07/Java.变量/&quot;);" href="javascript:void(0);" alt="">Java变量、数据类型</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/09/07/Java.变量/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/26/Java-io/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-26</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/26/Java-io/&quot;);" href="javascript:void(0);" alt="">JavaIO流</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/26/Java-io/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/04/22/JS.4/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-22</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/04/22/JS.4/&quot;);" href="javascript:void(0);" alt="">BOM</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/04/22/JS.4/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/04/03/JS.3/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-03</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/04/03/JS.3/&quot;);" href="javascript:void(0);" alt="">DOM 事件</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/04/03/JS.3/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/03/25/JS.1/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-25</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/03/25/JS.1/&quot;);" href="javascript:void(0);" alt="">JavaScript基础</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/03/25/JS.1/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/25/JDBC/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-25</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/25/JDBC/&quot;);" href="javascript:void(0);" alt="">JDBC</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/25/JDBC/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/03/15/CSS.2/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/5b36f2285de9c62607863908d15ecbca.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-15</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/03/15/CSS.2/&quot;);" href="javascript:void(0);" alt="">CSS 元素显示模式、背景</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/03/15/CSS.2/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/02/26/HTML5.1/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/6E18651E6A2CA151707DDE9D8B882A97.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-02-26</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/02/26/HTML5.1/&quot;);" href="javascript:void(0);" alt="">HTML5 基础认知</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/02/26/HTML5.1/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/03/23/CSS.4/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-23</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/03/23/CSS.4/&quot;);" href="javascript:void(0);" alt="">CSS 浮动、定位</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/03/23/CSS.4/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/03/16/CSS.3/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/6fd72df738160fc589865e298baa7e9d6c2ce27b_raw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-16</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/03/16/CSS.3/&quot;);" href="javascript:void(0);" alt="">CSS三大特性、盒子模型</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/03/16/CSS.3/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/03/11/CSS.1/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/4de4891bf999840165e5521e9a1cb28ffb9790e4_raw.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-11</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/03/11/CSS.1/&quot;);" href="javascript:void(0);" alt="">CSS选择器</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/03/11/CSS.1/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/03/15/CSS.0/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/4FEE8D76E1F21C51CC289549A2EBDD6D.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-15</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/03/15/CSS.0/&quot;);" href="javascript:void(0);" alt="">emmet语法、CSS简介、引入</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/03/15/CSS.0/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '2');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --></body></html>

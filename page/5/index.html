@@ -30,7 +30,7 @@
     day: '天前',
     month: '个月前'
   },
-  copyright: {"limitCount":50,"languages":{"author":"作者: 冰晕","link":"链接: ","source":"来源: Icyhaloの糖果屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  copyright: undefined,
   lightbox: 'fancybox',
   Snackbar: undefined,
   source: {
@@ -50,9 +50,9 @@
   title: 'Icyhaloの糖果屋',
   isPost: false,
   isHome: true,
-  isHighlightShrink: true,
+  isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-11-01 13:13:27'
+  postUpdate: '2023-11-13 11:32:57'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -160,10 +160,10 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
   white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
-<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://www.fomal.cc/static/css/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+<link rel="stylesheet" href="https://www.fomal.cc/static/css/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
     document.getElementById('loading-box').classList.add("loaded")
@@ -179,201 +179,264 @@ window.addEventListener('load',()=> { preloader.endLoading() })
 if (true) {
   document.addEventListener('pjax:send', () => { preloader.initLoading() })
   document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/FeeCpEnVIAAPn7.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Icyhaloの糖果屋"><span class="site-name">Icyhaloの糖果屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Icyhaloの糖果屋</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.3/" title="计算机网络-运输层"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络-运输层"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.3/" title="计算机网络-运输层">计算机网络-运输层</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-14T07:23:22.455Z" title="发表于 2023-05-14 15:23:22">2023-05-14</time></span></div><div class="content">数据传输过程
-数据沿图中止下多次的虚线方向传送的
-运输层直接为应用进程间的逻辑通信提供服务
-运输层向高层用户屏蔽了下面网络核心的细节(如网络拓扑、所采用的路由选择协议等) ，它使应用进看见的就好像是在两个运输层实体之间有一条端到端的逻辑通信信道。根据应用需求的不同，因特网的运输层为应用层提供了两种不同的运输协议，即面向连接的TCP和无连接的UDP，这两种协议就是本章要讨论的主要内容。
-TCP&#x2F;IP 体系结构
-网络接口层并没有规定什么具体内容，这是为了可以使用各种不同的网络接口，这是 TCP&#x2F;IP体系结构网际层中的协议。
-网际协议 IP 是网际层中的核心协议，它可以互连不同的网络接口，也就是互连各种异构型网络，并为其上层提供无连接，不可靠的数据报传输服务。
-应用层中，包含有大量的应用层协议，其中有些应用层协议需要使用可靠传输服务，有些应用层协议使用不可靠传输协议。
-TCP&#x2F;IP 体系结构运输层的主要任务就是使用端口号，为运行再不同主机上的应用进程，提供逻辑通信服务，使用 TCP 协议为应用层中那些需要使用可靠传输服务的协议，提供可靠传输服务，另外使用 UDP ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.2/" title="计算机网络-应用层"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络-应用层"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.2/" title="计算机网络-应用层">计算机网络-应用层</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-27T13:04:53.658Z" title="发表于 2023-04-27 21:04:53">2023-04-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-408/">计算机网络 408</a></span></div><div class="content">应用层概述应用层是计算机网络体系结构的最顶层，是设计和建立计算机网络的最终目的，也是计算机网络中发展最快的部分。
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/FeeCpEnVIAAPn7.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Icyhaloの糖果屋"><span class="site-name">Icyhaloの糖果屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Icyhaloの糖果屋</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/11/13/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7/" title="Java面向对象特性"><img class="post-bg" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/102972823.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java面向对象特性"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/13/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7/" title="Java面向对象特性">Java面向对象特性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-13T03:18:24.562Z" title="发表于 2023-11-13 11:18:24">2023-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Java-%E5%B0%81%E8%A3%85-%E7%BB%A7%E6%89%BF-%E5%A4%9A%E6%80%81/">Java 封装 继承 多态</a></span></div><div class="content">包包的作用：
 
-早期基于文本的应用(电子邮件、远程登录、文件传输、新闻组)。
-20世纪90年代将因特网带入干家万户的万维网WWW。
-当今流行的即时通信、P2P文件共享及各种音视频应用。
-计算设备的小型化和“无处不在”，宽带住宅接入和无线接入的日益普及和迅速发展，为未来更多的新型应用提供了广阔的舞台。
+区分相同名字的类
+当类很多时，便于管理 
+控制访问范围
 
+语法：package com.name 其中 com name 分别是 一级 和 二级目录，用 . 分隔
+包的本质：就是创建不同 文件夹&#x2F;目录 来保存 类 文件
+使用：
 
-应用进程通信方式网络应用程序运行在处于网络边缘的不同的端系统上,通过彼此间的通信来共同完成某项任务。
-开发一种新的网络应用首先要考虑的问题就是网络应用程序在各种端系统上的组织方式和它们之间的关系。目前流行的主要有以下两种:
-客户&#x2F;服务器方式应用层的许多协议是基于C&#x2F;S方式，例如，在移动互联网环境下，每个应用APP都是一个客户端。
-客户&#x2F;服务器方式特点：
+先引入包，之后创建对象
+123import com.name.T;...T tools = new T();
 
-客户(client)和服务器(server)是指通信中所涉及的2个应用进程
-客户&#x2F;服务器方式描述的是应用进程之间服务和被服务的关系
-客户是服务请求方(主动请求服务，被服务)
-服务器是服务提供方(被 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.1/" title="计算机网络-引言"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络-引言"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.1/" title="计算机网络-引言">计算机网络-引言</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-27T12:36:08.610Z" title="发表于 2023-04-27 20:36:08">2023-04-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-408/">计算机网络 408</a></span></div><div class="content">因特网简介网络，互联网与因特网的区别于关系网络：使用有线链路的简单网络
+不引入包，而在创建对象时写全路径
+1com.name.T tools = new com.name.T();
 
-互联网：若干网络通过路由器互联形成互联网
+命名规则：
 
-因特网：最大的互联网，日常生活中，人们口中的互联网指因特网
-Internet 与 internet对比：
-Internet：专用名词，必须使用 TCP&#x2F;IP 协议族，叫做因特网
-internet：通用名词，可以使用任意的协议，叫互联网
-因特网发展的三个阶段
-ISP：internet service provider，因特网服务提供者
+只能包含 数字 1 2 3、字母 a b A b、下划线 _、小圆点 .
+不能用 数字 开头。每级目录都不能。
 
-因特网已发展成为基于ISP的多层次结构的互连网络，三层ISP结构互联网示意图
+命名规范：
 
-因特网标准化工作因特网的标准化工作是面向公众的,其任何一个建议标准在成为因特网标准之前都以RFC技术文档的形式在因特网上发表。RFC (Request For Comments)的意思是“请求评论”。任何人都可以从因特网上免费下载RFC文档(http://ww.etf.org/rfc.html) ，并随时对某个RFC文档发表意见和建议。
+全小写字母 + 小圆点
+com.公司名.项目名.业务模块名
 
-因特网的管理机构
-因特网组成因特网由核心部分和边缘部分组成
+常用的包：
+java.lang：基本包，默认引入，不需要再引入
+java.util：系统提供的工具包。工具类。
+java.net：网络包，网络开发。
+java.awt：Java 的界面开发，GUI。
+引入包：
 
-核心部分：大量异构网络和连接这些网络搭建服务器组成 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/04/22/JS.4/" title="BOM"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BOM"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/22/JS.4/" title="BOM">BOM</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-22T06:07:07.935Z" title="发表于 2023-04-22 14:07:07">2023-04-22</time></span></div><div class="content">js组成JavaScript的组成：
+只引入该包下的一个类：import java.util.Scanner
+引入该包的所有内容（不建议）：i ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/11/13/Java%E9%9B%86%E5%90%88/" title="Java集合"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java集合"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/13/Java%E9%9B%86%E5%90%88/" title="Java集合">Java集合</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-13T03:18:24.560Z" title="发表于 2023-11-13 11:18:24">2023-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Java-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">Java 编程语言</a></span></div><div class="content">集合框架体系
 
-ECMAScript:
+集合主要是两组(单列集合，双列集合)
+
+Collection 接口（单列集合）：可以存放多个元素。每个元素可以是 ObjectCollection 接口有两个重要子接口：List（有序集合）和 Set（无序集合）
+
+Map 接口（双列集合）：用于保存具有映射关系的数据：key - value（双列元素）key 和 value 可以是任何类型的引用数据类型。其中 key 不能重复，value 可以重复。key 和 value 存在单一对应关系。通过特定的 key 一定能找到指定的 value
 
 
-规定了js基础语法核心知识。
-比如：变量、分支语句、循环语句、对象等等
+123456789单列集合ArrayList arrayList = new ArrayList();arrayList.add(&quot;jack&quot;);arrayList.add(&quot;tom&quot;);双列集合HashMap hashMap = new HashMap();hashMap.put(&quot;NO1&quot;, &quot;北京&quot;);hashMap.put(&quot;NO2&quot;, &quot;上海&quot;);
+
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/11/13/Java%E7%BB%93%E6%9E%84/" title="Java流程结构"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java流程结构"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/13/Java%E7%BB%93%E6%9E%84/" title="Java流程结构">Java流程结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-13T03:18:24.559Z" title="发表于 2023-11-13 11:18:24">2023-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Java-%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84/">Java 流程结构</a></span></div><div class="content">程序控制结构程序运行的流程控制决定程序是如何执行的。主要分为：顺序控制、分支控制、循环控制
+顺序控制程序从上到下逐行执行，中间没有任何判断和跳转（默认的控制顺序）
+语句：Java 中最小的执行单位。语句分为 单语句 和 复合语句。
+
+单语句：通常意义的一条语句。语句间以分号 ; 分隔。
+
+复合语句：一对大括号括起来的语句组。也称为 “块”
+12345&#123;    语句1;     语句2;    ...&#125;
+
+块中可以有多条语句。块后没有分号 ;
 
 
-Web APIs :
+分支控制让程序有选择的执行。主要分为：单分支控制、双分支控制
+if-else单分支控制
+12345if (条件表达式) 语句;或者，把代码块（复合语句）作为语句的场合也能这样写：if (条件表达式) &#123; 执行代码块;&#125;
+
+当条件表达式为 true，就会执行 &#123;执行代码块;&#125;；如果为 false 则不执行。特别地：如果 &#123;执行代码块;&#125; 中只有一条代码，也可以不写 &#123; &#125;
+双分支控制
+12345if (条件表达式) &#123; 执行代码块;&#1 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/11/13/Java%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="Java类与对象"><img class="post-bg" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/img-776fa48637353e8aa921de3441aa674b.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java类与对象"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/13/Java%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="Java类与对象">Java类与对象</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-13T03:18:24.557Z" title="发表于 2023-11-13 11:18:24">2023-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Java/">Java</a></span></div><div class="content">面向对象面向对象是一种开发软件的方法，使分析、设计和实现一个系统的方法尽可能接近人们认识一个系统的方法。包括三个方面：面向对象分析、面向对象设计、面向对象程序设计。
+Java 语言是纯面向对象的语言。其所有数据类型都有相应的类，程序可以完全基于对象编写。
+
+面向对象和面向过程的区别：
+两者的主要区别在于解决问题的方式不同：
+
+面向过程把解决问题的过程拆成一个个方法，通过一个个方法的执行解决问题。
+面向对象会先抽象出对象，然后用对象执行方法的方式解决问题。
+
+优缺点：
+面向过程：
+
+优点：
+流程化使得编程任务明确，在开发之前基本考虑了实现方式和最终结果，具体步骤清楚，便于节点分析。
+效率高，面向过程强调代码的短小精悍，善于结合数据结构来开发高效率的程序。
+
+缺点：
+需要深入的思考，耗费精力，代码重用性低，扩展能力差，后期维护难度比较大。
 
 
-DOM   文档对象模型， 定义了一套操作HTML文档的API
-BOM   浏览器对象模型，定义了一套操作浏览器窗口的API
+面向对象：
 
- ![67604738945](E:&#x2F;BaiduNetdiskDownload&#x2F;web APIs第五天&#x2F;04-笔记&#x2F;assets&#x2F;1676047389456.png)
-BOMwindow对象BOM (Browser Object Model ) 是浏览器对象模型
+优点:
+结构清晰，程序是模块化和结构化，更加符合人类的思维方式；
+易扩展，代码重用率高，可继承，可覆盖，可以设计出低耦合的系统；
+易维护，系统低耦合的特点有利于减少程序的后期维护工作量。
 
-window对象是一个全局对象，也可以说是JavaScript中的顶级对象，window则是BOM的核心对象
-像document、alert()、console.log()这些都是window的属性，基本BOM的属性和方法都是window的，可以说BOM包含了DOM
-所有通过var定义在全局作用域中的变量、函数都会变成window对象的属性和方法
-window对象下的属性和方法调用的 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/04/20/JS.5/" title="作用域、函数、数组进阶"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="作用域、函数、数组进阶"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/20/JS.5/" title="作用域、函数、数组进阶">作用域、函数、数组进阶</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-20T14:41:16.247Z" title="发表于 2023-04-20 22:41:16">2023-04-20</time></span></div><div class="content">作用域作用域（scope）规定了变量能够被访问的“范围”，离开了这个“范围”变量便不能被访问，作用域分为全局作用域和局部作用域
-1 局部作用域局部作用域分为函数作用域和块作用域
-函数作用域在函数内部声明的变量只能在函数内部被访问，外部无法直接访问
-123456789101112&lt;script&gt;  // 声明 counter 函数  function counter(x, y) &#123;    // 函数内部声明的变量    const s = x + y    console.log(s) // 18  &#125;  // 设用 counter 函数  counter(10, 8)  // 访问变量 s  console.log(s)// 报错&lt;/script&gt;
-
-总结：
-
-函数内部声明的变量，在函数外部无法被访问
-函数的参数也是函数内部的局部变量
-不同函数内部声明的变量无法互相访问
-函数执行完毕后，函数内部的变量实际被清空了
-
-块作用域在 JavaScript 中使用 &#123; &#125; 包裹的代码称为代码块，如 if、for中的（），代码块内部 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/04/03/JS.3/" title="DOM 事件"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DOM 事件"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/04/03/JS.3/" title="DOM 事件">DOM 事件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-03T08:33:03.749Z" title="发表于 2023-04-03 16:33:03">2023-04-03</time></span></div><div class="content">一、事件监听事件：在编程时系统内发生的动作或者发生的事情
-事件监听：就是让程序检测是否有事件产生，一旦有事件触发，就立即调用一个函数做出响应，也称为注册事件
-事件监听三要素：
-
-事件源： 那个 dom 元素被事件触发了，要获取 dom 元素
-事件类型： 用什么方式触发，事件类型要加引号
-事件调用的函数： 要做什么事
-
-语法：
-1234// 1. 获取 button 对应的 DOM 对象const btn = document.querySelector(&#x27;#btn&#x27;)// 2. 添加事件监听元素对象.addEventListener(&#x27;事件类型&#x27;, 函数 () &#123;&#125;)
-
-addEventListener 是 DOM 对象专门用来添加事件监听的方法，它的两个参数分别为事件类型和事件回调
-完成事件监听分成4个步骤：
-
-获取事件对象 （ DOM 元素 ）
-通过 addEventListener 方法为 DOM 对象添加事件监听
-等待事件触发，如用户点击了某个按钮时便会触发 click 事件类型
-事件触发后，相对应的回调函数会被执行
- ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/31/JS.2/" title="DOM"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DOM"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/31/JS.2/" title="DOM">DOM</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-31T10:29:56.391Z" title="发表于 2023-03-31 18:29:56">2023-03-31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF-JavaScript/">前端 JavaScript</a></span></div><div class="content">Web APIs 介绍ECMAScript 简称 ES 它提供了一套语言标准规范，如变量、数据类型、表达式、语句、函数等语法规则都是由 ECMAScript 规定的。浏览器将 ECMAScript 大部分的规范加以实现，并且在此基础上又扩展一些实用的功能，这些被扩展出来的内容我们称为 Web APIs
-
-ECMAScript 运行在浏览器中然后再结合 Web APIs 才是真正的 JavaScript，Web APIs 的核心是 DOM 和 BOM
-作用: 就是使用 JS 去操作 html 和浏览器
-分类：DOM (文档对象模型)、BOM（浏览器对象模型）
-
-DOMDOM（ Document Object Model——文档对象模型 ）是用来呈现以及与任意 HTML 或 XML文档交互的API，DOM是浏览器提供的一套专门用来 操作网页内容 的功能
-作用：开发网页内容特效和实现用户交互
-1 DOM 树如下图所示，将 HTML 文档以树状结构直观的表现出来，我们称之为文档树或 DOM 树，
-作用：文档树直观的体现了标签与标签之间的关系
-
-2 DOM 对象节点是文档树的组成部分，每一个节点 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/25/JS.1/" title="JavaScript基础"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript基础"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/25/JS.1/" title="JavaScript基础">JavaScript基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-25T11:05:04.494Z" title="发表于 2023-03-25 19:05:04">2023-03-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF-JavaScript/">前端 JavaScript</a></span></div><div class="content">JavaScript介绍JavaScript 是一种运行在客户端（浏览器）的编程语言，实现人机交互效果
-是一种弱类型语言
-JavaScript 可以实现：
-
-网页特效 (监听用户的一些行为让网页作出对应的反馈) 
-表单验证 (针对表单数据的合法性进行判断)
-数据交互(获取后台的数据,渲染到前端)
-服务端编程(node.js)
-
-有什么：
-
-ECMAScript：规定了js基础语法核心知识。比如：变量、分支语句、循环语句、对象等等
-Web APIs :
-
-DOM 操作文档，比如对页面元素进行移动、大小、添加删除等操作
-BOM 操作浏览器，比如页面弹窗，检测窗口宽度、存储数据到浏览器等等
-
-JavaScript权威网站： https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
-JavaScript 引入JavaScript 程序不能独立运行，它需要被嵌入 HTML 中，然后浏览器才能执行 JavaScript 代码。通过 script 标签将 JavaScript 代码引入到 HTML 中。和 CSS 一样有三种引入方式
-
-内部 Ja ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/23/CSS.4/" title="CSS 浮动、定位"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS 浮动、定位"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/23/CSS.4/" title="CSS 浮动、定位">CSS 浮动、定位</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-23T13:00:37.754Z" title="发表于 2023-03-23 21:00:37">2023-03-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF-CSS/">前端 CSS</a></span></div><div class="content">一、float 浮动1. 传统网页布局的三种方式CSS 提供了三种传统布局方式(简单说,就是盒子如何进行排列顺序)：
-
-普通流（标准流）
-
-浮动
-
-定位
+缺点：
+开销大，当要修改对象内部时，对象的属性 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/11/13/Java%E6%B3%9B%E5%9E%8B/" title="Java-泛型"><img class="post-bg" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/B6EB41B6BD6C659917074A68724D79A6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java-泛型"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/13/Java%E6%B3%9B%E5%9E%8B/" title="Java-泛型">Java-泛型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-13T03:18:24.556Z" title="发表于 2023-11-13 11:18:24">2023-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Java-%E6%B3%9B%E5%9E%8B/">Java 泛型</a></span></div><div class="content">泛型泛型引入泛型（generic）：又称 参数化类型。是JDK 5 出现的新特性。解决数据类型的安全性问题。在类声明或实例化时只要制定好需要的具体类型即可。
+例1：
+1Properties&lt;Person&gt; prop = new Properties&lt;Person&gt;();
 
 
-这三种布局方式都是用来摆放盒子的，盒子摆放到合适位置，布局自然就完成了。
-注意：实际开发中，一个页面基本都包含了这三种布局方式
-2. 为什么需要浮动有很多的布局效果，标准流没有办法完成，此时就可以利用浮动完成布局。 因为浮动可以改变元素标签默认的排列方式.
-浮动最典型的应用：可以让多个块级元素一行内排列显示
-网页布局第一准则：多个块级元素纵向排列找标准流，多个块级元素横向排列找浮动
-3. 什么是浮动float 属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘
-语法：
-1选择器 &#123; float: 属性值; &#125;
+上例表示存放到 prop 中的必须是 Person 类型。如果编译器发现添加类型不符合要求，即报错。
+遍历时，直接取出 Person 而非 Object
 
+例2：
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758package java.base;import java.util.ArrayList;public class chapter15 &#123;    public static void main(String[] args) &#123;        ArrayList arrayList = new Arra ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/11/13/Java%E6%9E%9A%E4%B8%BE/" title="Java枚举和注解"><img class="post-bg" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/img-a6290a17b6fac165688cd6e65c5ae195.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java枚举和注解"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/13/Java%E6%9E%9A%E4%B8%BE/" title="Java枚举和注解">Java枚举和注解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-13T03:18:24.554Z" title="发表于 2023-11-13 11:18:24">2023-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Java/">Java</a></span></div><div class="content">枚举把具体的对象一一列举出来的类，就称为 枚举类（enumeration）。
+枚举是一组常量的集合。可以这里理解：枚举属于一种特殊的类，里面只包含一组有限的特定的对象。
+实现方法：
 
-4. 浮动特性
-浮动元素会脱离标准流(脱标：浮动的盒子不再保留原先的位置)
+自定义枚举
+enum 关键字枚举
+
+自定义枚举
+构造器私有化，防止在外面 new 对象。
+
+去掉 set 方法（可保留 get），防止属性被修改。因为枚举对象值通常为只读
+
+在类内部直接创建固定对象。使用 final + static 共同修饰，对象名通常全部大写。
+
+使用 类名.对象名 使用对象
+
+枚举对象按照需要可以有多个属性
+12345678910111213141516171819202122232425262728293031public class Main &#123;    public static void main(String[] args) &#123;        System.out.println(Enum.e1);    &#125;&#125;class Enum&#123;    public String name;    public String desc;  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/11/13/Java%E6%95%B0%E7%BB%84/" title="Java数组"><img class="post-bg" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/1562394500344.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java数组"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/13/Java%E6%95%B0%E7%BB%84/" title="Java数组">Java数组</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-13T03:18:24.553Z" title="发表于 2023-11-13 11:18:24">2023-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Java-%E6%95%B0%E7%BB%84/">Java 数组</a></span></div><div class="content">数组数组：可以存放多个同一类型的数据。数组也是一种数据，是引用类型。数组本身存放的是一个地址。
+一维数组数组可以是多个相同类型数据的组合，实现对这些数据的统一管理。数组中的元素可以是任何数据类型。包括基本类型和引用类型。
+数组的下标从 0 开始。且必须在指定范围内使用，否则报错。
+数组属于 引用类型，数组型数据是 对象（Object）
+数组创建后，如果没有赋值，有默认值：
 
 
 
-浮动的元素会一行内显示并且元素顶部对齐
-
-注意： 
-
-浮动的元素是互相贴靠在一起的（不会有缝隙），如果父级宽度装不下这些浮动的盒子，多出的盒子会另起一行对齐
-
-
-浮动的元素会具有行内块元 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/16/CSS.3/" title="CSS三大特性、盒子模型"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/6fd72df738160fc589865e298baa7e9d6c2ce27b_raw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS三大特性、盒子模型"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/16/CSS.3/" title="CSS三大特性、盒子模型">CSS三大特性、盒子模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-16T05:56:38.694Z" title="发表于 2023-03-16 13:56:38">2023-03-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF-CSS/">前端 CSS</a></span></div><div class="content">一、CSS三大特性1 层叠性​		相同选择器给设置相同的样式，此时一个样式就会覆盖（层叠）另一个冲突的样式。层叠性主要解决样式冲突的问题
-层叠性原则:
-
-样式冲突，遵循的原则是就近原则，哪个样式离结构近，就执行哪个样式
-样式不冲突，不会层叠
-
-
-2 继承性​		CSS中的继承: 子标签会继承父标签的某些样式，如文本颜色和字号。恰当地使用继承可以简化代码，降低 CSS 样式的复杂性。
-
-子元素可以继承父元素的样式
-
-text-，font-，line-这些元素开头的可以继承，以及color属性
-
-行高的继承性：
-123body &#123;  font:12px/1.5 Microsoft YaHei；&#125;
-
-
-行高可以跟单位也可以不跟单位
-如果子元素没有设置行高，则会继承父元素的行高为 1.5
-此时子元素的行高是：当前子元素的文字大小 * 1.5
-body 行高 1.5  这样写法最大的优势就是里面子元素可以根据自己文字大小自动调整行高
-
-3 优先级当同一个元素指定多个选择器，就会有优先级的产生。
-
-选择器相同，则执行层叠性
-选择器不同，则根据选择器权重执行
+int
+0
 
 
 
+short
+0
 
-选择器
-选择 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/6/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/FeeCpEnVIAAPn7.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">冰晕</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/"><i class="fab fa-github"></i><span>前往糖果屋</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/10/31/Linux%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" title="Linux 介绍及虚拟机配置"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/20231031223532.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux 介绍及虚拟机配置"/></a><div class="content"><a class="title" href="/2023/10/31/Linux%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" title="Linux 介绍及虚拟机配置">Linux 介绍及虚拟机配置</a><time datetime="2023-10-31T14:37:34.135Z" title="发表于 2023-10-31 22:37:34">2023-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/31/Linux%E5%91%BD%E4%BB%A4/" title="Linux常用命令"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/20231031223532.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux常用命令"/></a><div class="content"><a class="title" href="/2023/10/31/Linux%E5%91%BD%E4%BB%A4/" title="Linux常用命令">Linux常用命令</a><time datetime="2023-10-31T14:36:43.800Z" title="发表于 2023-10-31 22:36:43">2023-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/29/Java.%E6%8E%A5%E5%8F%A3/" title="Java-接口"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java-接口"/></a><div class="content"><a class="title" href="/2023/10/29/Java.%E6%8E%A5%E5%8F%A3/" title="Java-接口">Java-接口</a><time datetime="2023-10-29T07:48:32.795Z" title="发表于 2023-10-29 15:48:32">2023-10-29</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+
+byte
+0
+
+
+long
+0L
+
+
+float
+0.0F
+
+
+double（
+0.0
+
+
+char
+\u0000
+
+
+boolean
+false
+
+
+String
+null
+
+
+Object
+null
+
+
+使用数组的步骤：
+
+声明数组并开辟空间 
+给数组各个元素赋值 
+使用数组
+
+数组的构造方法
+
+构造方式1：动态初始化
+123int[] ints = new int[5];				// 创建了数组 name，存放5个intint ints2[] = new int[1];				// 这种写法也行ints[2] = 15;							// 访问数组第3个数
+
+构造方式 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/11/13/Java%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/" title="Java抽象类和接口"><img class="post-bg" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/102972823.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java抽象类和接口"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/13/Java%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/" title="Java抽象类和接口">Java抽象类和接口</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-13T03:18:24.550Z" title="发表于 2023-11-13 11:18:24">2023-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB-%E6%8E%A5%E5%8F%A3/">Java 抽象类 接口</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/JVM-%E5%AD%97%E8%8A%82%E7%A0%81/">JVM 字节码</a></span></div><div class="content">抽象类关键字：abstract
+当父类的某些方法需要声明，却不知道如何实现时，可以将其声明为抽象方法。那个场合，要将该类声明为 abstract 类。
+抽象类的价值更多是用于设计。设计者设计好后，让子类继承并实现。也是考官爱问的考点。
+定义抽象类：访问修饰符 abstract 类名&#123;...&#125;
+定义抽象方法：访问修饰符 abstract 返回值 方法名(形参列表);
+
+无方法体，不写{ }
+
+使用细节
+抽象类不能被实例化
+抽象类不一定包含抽象方法。也就是说，抽象类可以没有 abstract方法
+一旦包含 abstract 方法，则该类一定要声明为 abstract
+abstract 只能修饰 类 和 方法，不能修饰其他。
+抽象类可以有任意成员（非抽象方法、构造器、静态属性等）。即，抽象类本质还是类。
+抽象方法不能有主体。即，抽象方法不能实现。
+如果一个类继承了 abstract 类，则其必须实现所有 abstract 方法，除非其自己也是 abstract 类。
+抽象方法不能用 private final static 来修饰。因为，这些关键词都和 重写 相违背。
+
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/11/13/Java%E5%BC%82%E5%B8%B8/" title="Java异常"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java异常"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/13/Java%E5%BC%82%E5%B8%B8/" title="Java异常">Java异常</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-13T03:18:24.548Z" title="发表于 2023-11-13 11:18:24">2023-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Java-%E5%BC%82%E5%B8%B8/">Java 异常</a></span></div><div class="content">异常在 Java 语言中，将程序执行中发生的不正常情况称为 “异常”（开发过程中的语法错误和逻辑错误不是异常）
+这些 异常事件 可分为两类：
+
+Error（错误）：Java 虚拟机无法解决的严重问题。
+如：JVM 系统内部错误，资源耗尽等严重情况。Error 是严重错误，程序会崩溃。
+
+Exception（异常）：其他因编程错误或偶然的外部因素导致的一般性问题，可以使用针对性的代码进行处理。
+如：空指针访问，试图读取不存在的文件，网络中断等等。
+Exception 又分为两大类：
+
+运行时异常（程序运行时，发生的异常）
+编译时异常（编程时，编译器检查出的异常，会爆红）
+
+
+
+异常体系图
+异常分为两大类：运行时异常 和 编译时异常
+
+运行时异常，编译器不要求强制处置的异常。一般是指编程的逻辑错误，是程序员应该避免其出现的异常。
+java.lang.RuntimeException 类及它的子类都是运行时异常
+对于运行时异常，可以不做处理。因为这类异常很普遍，若全处理会对程序的可读性和运行效率产生影响
+
+编译时异常，是编译器要求必须处置的异常
+
+
+常见的运行时异常常见的运行时异常（Runt ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/11/13/Java%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="Java字符串"><img class="post-bg" src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java字符串"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/13/Java%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="Java字符串">Java字符串</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-13T03:18:24.545Z" title="发表于 2023-11-13 11:18:24">2023-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Java-%E5%AD%97%E7%AC%A6%E4%B8%B2/">Java 字符串</a></span></div><div class="content">String类
+
+String 对象用于保存字符串，也就是一组字符序列
+
+字符串常量对象是用双引号扩起的字符序列。例如 &quot;你好&quot;
+
+字符串的字符使用 Unicode 字符编码。一个字符（不论字母汉字）占 2 字节
+
+常用构造器：
+
+String str1 = new String();
+
+String str2 = new String(String original);
+
+String str3 = new String(char[] a);
+
+String str4 = new String(char[] a, int startIndex, int count);
+这句意思是：char[] 从 startIndex 起的 count 个字符
+
+
+
+String 实现了接口 Serializable 和 Comparable ，可以 串行化和 比较大小
+
+串行化：即，可以被网络传输，也能保存到文件
+
+
+String 是 final 类，不能被继承
+
+String 有属性 private final char[] value; 用于存放字符串内容。
+value 是 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/6/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/FeeCpEnVIAAPn7.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">冰晕</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/"><i class="fab fa-github"></i><span>前往糖果屋</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/11/13/Java%E5%8F%8D%E5%B0%84/" title="Java反射"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/113041441_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java反射"/></a><div class="content"><a class="title" href="/2023/11/13/Java%E5%8F%8D%E5%B0%84/" title="Java反射">Java反射</a><time datetime="2023-11-13T03:23:43.188Z" title="发表于 2023-11-13 11:23:43">2023-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/13/Java%E5%B8%B8%E7%94%A8%E7%B1%BB/" title="Java常用类"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java常用类"/></a><div class="content"><a class="title" href="/2023/11/13/Java%E5%B8%B8%E7%94%A8%E7%B1%BB/" title="Java常用类">Java常用类</a><time datetime="2023-11-13T03:23:16.915Z" title="发表于 2023-11-13 11:23:16">2023-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/13/Java%E6%93%8D%E4%BD%9C%E7%AC%A6/" title="Java-运算符、输入输出"><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/img/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java-运算符、输入输出"/></a><div class="content"><a class="title" href="/2023/11/13/Java%E6%93%8D%E4%BD%9C%E7%AC%A6/" title="Java-运算符、输入输出">Java-运算符、输入输出</a><time datetime="2023-11-13T03:23:16.914Z" title="发表于 2023-11-13 11:23:16">2023-11-13</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             <a class="card-more-btn" href="/categories/" title="查看更多">
     <i class="fas fa-angle-right"></i></a>
             </div>
             <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JDBC/"><span class="card-category-list-name">JDBC</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JVM/"><span class="card-category-list-name">JVM</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">14</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Spring/"><span class="card-category-list-name">Spring</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/"><span class="card-category-list-name">后端</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="card-category-list-name">数据库</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%89%8D%E7%AB%AF-CSS/" style="font-size: 1.45em; color: rgb(168, 164, 90)">前端 CSS</a><a href="/tags/%E5%89%8D%E7%AB%AF-HTML/" style="font-size: 1.15em; color: rgb(6, 9, 101)">前端 HTML</a><a href="/tags/JDBC-%E6%95%B0%E6%8D%AE%E5%BA%93-sql/" style="font-size: 1.15em; color: rgb(130, 127, 69)">JDBC 数据库 sql</a><a href="/tags/%E5%89%8D%E7%AB%AF-JavaScript/" style="font-size: 1.25em; color: rgb(57, 121, 14)">前端 JavaScript</a><a href="/tags/JVM-%E5%86%85%E5%AD%98/" style="font-size: 1.15em; color: rgb(124, 178, 169)">JVM 内存</a><a href="/tags/JVM-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" style="font-size: 1.15em; color: rgb(159, 79, 185)">JVM 垃圾回收</a><a href="/tags/Java-%E5%BC%82%E5%B8%B8/" style="font-size: 1.15em; color: rgb(37, 150, 138)">Java 异常</a><a href="/tags/JVM-%E5%AD%97%E8%8A%82%E7%A0%81/" style="font-size: 1.15em; color: rgb(21, 24, 92)">JVM 字节码</a><a href="/tags/Java-%E5%8F%98%E9%87%8F-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 1.15em; color: rgb(54, 53, 56)">Java 变量 数据类型</a><a href="/tags/Java-%E8%BF%90%E7%AE%97%E7%AC%A6-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" style="font-size: 1.15em; color: rgb(79, 164, 167)">Java 运算符 输入输出</a><a href="/tags/Java-%E6%95%B0%E7%BB%84/" style="font-size: 1.15em; color: rgb(107, 190, 121)">Java 数组</a><a href="/tags/Java/" style="font-size: 1.35em; color: rgb(30, 70, 54)">Java</a><a href="/tags/Java-%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84/" style="font-size: 1.15em; color: rgb(138, 102, 82)">Java 流程结构</a><a href="/tags/Java-%E6%B3%9B%E5%9E%8B/" style="font-size: 1.15em; color: rgb(104, 82, 181)">Java 泛型</a><a href="/tags/JDBC-Java/" style="font-size: 1.15em; color: rgb(75, 143, 163)">JDBC Java</a><a href="/tags/Java-%E7%BA%BF%E7%A8%8B/" style="font-size: 1.15em; color: rgb(27, 185, 71)">Java 线程</a><a href="/tags/Java-%E5%85%B3%E9%94%AE%E5%AD%97/" style="font-size: 1.15em; color: rgb(170, 199, 105)">Java 关键字</a><a href="/tags/Java-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 1.15em; color: rgb(140, 93, 113)">Java 字符串</a><a href="/tags/Java-%E5%86%85%E7%BD%AE%E7%B1%BB/" style="font-size: 1.15em; color: rgb(114, 33, 186)">Java 内置类</a><a href="/tags/Java-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 1.15em; color: rgb(155, 120, 33)">Java 编程语言</a><a href="/tags/Linux-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/" style="font-size: 1.15em; color: rgb(194, 48, 20)">Linux 虚拟机安装</a><a href="/tags/Linux-%E5%91%BD%E4%BB%A4/" style="font-size: 1.15em; color: rgb(190, 2, 11)">Linux 命令</a><a href="/tags/Maven-%E6%A1%86%E6%9E%B6/" style="font-size: 1.15em; color: rgb(49, 129, 190)">Maven 框架</a><a href="/tags/SSM-Spring/" style="font-size: 1.15em; color: rgb(113, 187, 97)">SSM Spring</a><a href="/tags/%E6%A1%86%E6%9E%B6-%E6%95%B0%E6%8D%AE%E5%BA%93-Mybatis/" style="font-size: 1.15em; color: rgb(196, 5, 48)">框架 数据库 Mybatis</a><a href="/tags/Spring-%E6%A1%86%E6%9E%B6-%E4%BA%8B%E5%8A%A1/" style="font-size: 1.15em; color: rgb(123, 95, 14)">Spring 框架 事务</a><a href="/tags/Spring-%E6%A1%86%E6%9E%B6-aop/" style="font-size: 1.15em; color: rgb(57, 179, 126)">Spring 框架 aop</a><a href="/tags/%E5%90%8E%E7%AB%AF-%E6%A1%86%E6%9E%B6-MVC/" style="font-size: 1.15em; color: rgb(141, 119, 54)">后端 框架 MVC</a><a href="/tags/SSM%E6%95%B4%E5%90%88-%E6%A1%86%E6%9E%B6-%E6%8B%A6%E6%88%AA%E5%99%A8/" style="font-size: 1.15em; color: rgb(101, 86, 35)">SSM整合 框架 拦截器</a><a href="/tags/SpringBoot-Spring-%E6%A1%86%E6%9E%B6/" style="font-size: 1.15em; color: rgb(98, 198, 137)">SpringBoot Spring 框架</a><a href="/tags/Spring-%E6%A1%86%E6%9E%B6/" style="font-size: 1.15em; color: rgb(55, 89, 111)">Spring 框架</a><a href="/tags/maven-%E6%89%93%E5%8C%85/" style="font-size: 1.15em; color: rgb(181, 77, 131)">maven 打包</a><a href="/tags/MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.15em; color: rgb(85, 177, 147)">MySQL 数据库</a><a href="/tags/Java-%E6%8E%A5%E5%8F%A3/" style="font-size: 1.15em; color: rgb(57, 132, 39)">Java 接口</a><a href="/tags/408-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.15em; color: rgb(50, 157, 23)">408 数据结构</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-408/" style="font-size: 1.25em; color: rgb(128, 3, 108)">计算机网络 408</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">54</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">273.6k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-11-01T05:13:27.216Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 冰晕</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/408/"><span class="card-category-list-name">408</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JDBC/"><span class="card-category-list-name">JDBC</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JVM/"><span class="card-category-list-name">JVM</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">16</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB-%E6%8E%A5%E5%8F%A3/"><span class="card-category-list-name">Java 抽象类 接口</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Spring/"><span class="card-category-list-name">Spring</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/"><span class="card-category-list-name">后端</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/JDBC-%E6%95%B0%E6%8D%AE%E5%BA%93-sql/" style="font-size: 1.15em; color: rgb(43, 54, 101)">JDBC 数据库 sql</a><a href="/tags/%E5%B9%B6%E5%8F%91-%E7%AE%A1%E5%9E%8B/" style="font-size: 1.15em; color: rgb(125, 97, 120)">并发 管型</a><a href="/tags/JVM-%E5%86%85%E5%AD%98/" style="font-size: 1.15em; color: rgb(155, 153, 1)">JVM 内存</a><a href="/tags/JVM-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" style="font-size: 1.15em; color: rgb(151, 64, 172)">JVM 垃圾回收</a><a href="/tags/JDBC-Java/" style="font-size: 1.15em; color: rgb(129, 132, 148)">JDBC Java</a><a href="/tags/Java-%E5%85%B3%E9%94%AE%E5%AD%97/" style="font-size: 1.15em; color: rgb(9, 70, 111)">Java 关键字</a><a href="/tags/JVM-%E5%AD%97%E8%8A%82%E7%A0%81/" style="font-size: 1.25em; color: rgb(64, 87, 122)">JVM 字节码</a><a href="/tags/Java-%E5%8F%98%E9%87%8F-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 1.15em; color: rgb(164, 137, 36)">Java 变量 数据类型</a><a href="/tags/Java/" style="font-size: 1.35em; color: rgb(106, 8, 36)">Java</a><a href="/tags/Java-%E7%BA%BF%E7%A8%8B/" style="font-size: 1.15em; color: rgb(23, 57, 147)">Java 线程</a><a href="/tags/Java-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 1.15em; color: rgb(63, 43, 61)">Java 字符串</a><a href="/tags/Java-%E5%BC%82%E5%B8%B8/" style="font-size: 1.15em; color: rgb(73, 144, 46)">Java 异常</a><a href="/tags/Java-%E5%86%85%E7%BD%AE%E7%B1%BB/" style="font-size: 1.15em; color: rgb(121, 195, 24)">Java 内置类</a><a href="/tags/Java-%E8%BF%90%E7%AE%97%E7%AC%A6-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" style="font-size: 1.15em; color: rgb(148, 95, 192)">Java 运算符 输入输出</a><a href="/tags/Java-%E6%95%B0%E7%BB%84/" style="font-size: 1.15em; color: rgb(166, 103, 97)">Java 数组</a><a href="/tags/Java-%E6%B3%9B%E5%9E%8B/" style="font-size: 1.15em; color: rgb(3, 40, 4)">Java 泛型</a><a href="/tags/Java-%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84/" style="font-size: 1.15em; color: rgb(48, 145, 119)">Java 流程结构</a><a href="/tags/Java-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 1.15em; color: rgb(54, 138, 71)">Java 编程语言</a><a href="/tags/Java-%E5%B0%81%E8%A3%85-%E7%BB%A7%E6%89%BF-%E5%A4%9A%E6%80%81/" style="font-size: 1.15em; color: rgb(169, 0, 188)">Java 封装 继承 多态</a><a href="/tags/Linux-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/" style="font-size: 1.15em; color: rgb(144, 100, 114)">Linux 虚拟机安装</a><a href="/tags/Linux-%E5%91%BD%E4%BB%A4/" style="font-size: 1.15em; color: rgb(138, 82, 77)">Linux 命令</a><a href="/tags/maven-%E6%89%93%E5%8C%85/" style="font-size: 1.15em; color: rgb(180, 12, 83)">maven 打包</a><a href="/tags/%E6%A1%86%E6%9E%B6-%E6%95%B0%E6%8D%AE%E5%BA%93-Mybatis/" style="font-size: 1.15em; color: rgb(121, 115, 200)">框架 数据库 Mybatis</a><a href="/tags/Java-%E6%8E%A5%E5%8F%A3/" style="font-size: 1.15em; color: rgb(70, 74, 74)">Java 接口</a><a href="/tags/Maven-%E6%A1%86%E6%9E%B6/" style="font-size: 1.15em; color: rgb(57, 168, 133)">Maven 框架</a><a href="/tags/SSM-Spring/" style="font-size: 1.15em; color: rgb(198, 80, 101)">SSM Spring</a><a href="/tags/Spring-%E6%A1%86%E6%9E%B6-%E4%BA%8B%E5%8A%A1/" style="font-size: 1.15em; color: rgb(100, 200, 175)">Spring 框架 事务</a><a href="/tags/Spring-%E6%A1%86%E6%9E%B6-aop/" style="font-size: 1.15em; color: rgb(30, 110, 187)">Spring 框架 aop</a><a href="/tags/SSM%E6%95%B4%E5%90%88-%E6%A1%86%E6%9E%B6-%E6%8B%A6%E6%88%AA%E5%99%A8/" style="font-size: 1.15em; color: rgb(100, 2, 57)">SSM整合 框架 拦截器</a><a href="/tags/%E5%90%8E%E7%AB%AF-%E6%A1%86%E6%9E%B6-MVC/" style="font-size: 1.15em; color: rgb(56, 153, 194)">后端 框架 MVC</a><a href="/tags/SpringBoot-Spring-%E6%A1%86%E6%9E%B6/" style="font-size: 1.15em; color: rgb(16, 155, 156)">SpringBoot Spring 框架</a><a href="/tags/Spring-%E6%A1%86%E6%9E%B6/" style="font-size: 1.15em; color: rgb(51, 118, 199)">Spring 框架</a><a href="/tags/Spring/" style="font-size: 1.15em; color: rgb(39, 80, 99)">Spring</a><a href="/tags/408-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.25em; color: rgb(147, 189, 198)">408 数据结构</a><a href="/tags/MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.15em; color: rgb(99, 48, 6)">MySQL 数据库</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-408/" style="font-size: 1.45em; color: rgb(184, 173, 32)">计算机网络 408</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">53</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">273.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-11-13T03:32:56.398Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 冰晕</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
 
 var pjax = new Pjax({
   elements: 'a:not([target="_blank"])',
@@ -443,7 +506,7 @@ document.addEventListener('pjax:error', (e) => {
 })</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
     function butterfly_categories_card_injector_config(){
       var parent_div_git = document.getElementById('recent-posts');
-      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/前端/&quot;);" href="javascript:void(0);">前端</a><span class="categoryBar-list-count">8</span><span class="categoryBar-list-descr">各类主流的编程语言</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JDBC/&quot;);" href="javascript:void(0);">JDBC</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JVM/&quot;);" href="javascript:void(0);">JVM</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Java/&quot;);" href="javascript:void(0);">Java</a><span class="categoryBar-list-count">14</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/编程语言-Java/&quot;);" href="javascript:void(0);">编程语言 Java</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/编程语言/&quot;);" href="javascript:void(0);">编程语言</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/框架/&quot;);" href="javascript:void(0);">框架</a><span class="categoryBar-list-count">8</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Spring/&quot;);" href="javascript:void(0);">Spring</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/后端/&quot;);" href="javascript:void(0);">后端</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/数据库/&quot;);" href="javascript:void(0);">数据库</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/数据结构/&quot;);" href="javascript:void(0);">数据结构</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/计算机网络/&quot;);" href="javascript:void(0);">计算机网络</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JDBC/&quot;);" href="javascript:void(0);">JDBC</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">各类主流的编程语言</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JVM/&quot;);" href="javascript:void(0);">JVM</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Java/&quot;);" href="javascript:void(0);">Java</a><span class="categoryBar-list-count">16</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Java-抽象类-接口/&quot;);" href="javascript:void(0);">Java 抽象类 接口</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/编程语言/&quot;);" href="javascript:void(0);">编程语言</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/框架/&quot;);" href="javascript:void(0);">框架</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Spring/&quot;);" href="javascript:void(0);">Spring</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/后端/&quot;);" href="javascript:void(0);">后端</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/必看/&quot;);" href="javascript:void(0);">必看</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/数据结构/&quot;);" href="javascript:void(0);">数据结构</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/数据库/&quot;);" href="javascript:void(0);">数据库</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/408/&quot;);" href="javascript:void(0);">408</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
       console.log('已挂载butterfly_categories_card')
       parent_div_git.insertAdjacentHTML("afterbegin",item_html)
       }
@@ -453,7 +516,7 @@ document.addEventListener('pjax:error', (e) => {
   </script><script data-pjax>
   function butterfly_swiper_injector_config(){
     var parent_div_git = document.getElementById('recent-posts');
-    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/02/22/hello-world/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/TEHSN5228DVNJ0IKG8LMEF5.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-02-22</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/02/22/hello-world/&quot;);" href="javascript:void(0);" alt="">至每一个来到这里的人</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/02/22/hello-world/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/11/13/hello-world/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://raw.githubusercontent.com/icyhalo/picgo/main/TEHSN5228DVNJ0IKG8LMEF5.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-11-13</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/11/13/hello-world/&quot;);" href="javascript:void(0);" alt="">至每一个来到这里的人</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/11/13/hello-world/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
     console.log('已挂载butterfly_swiper')
     parent_div_git.insertAdjacentHTML("afterbegin",item_html)
     }

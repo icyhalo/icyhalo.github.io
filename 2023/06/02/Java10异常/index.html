@@ -1,0 +1,485 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Java-异常 | Icyhaloの糖果屋</title><meta name="author" content="冰晕"><meta name="copyright" content="冰晕"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="异常在 Java 语言中，将程序执行中发生的不正常情况称为 “异常”（开发过程中的语法错误和逻辑错误不是异常） 这些 异常事件 可分为两类：  Error（错误）：Java 虚拟机无法解决的严重问题。 如：JVM 系统内部错误，资源耗尽等严重情况。Error 是严重错误，程序会崩溃。  Exception（异常）：其他因编程错误或偶然的外部因素导致的一般性问题，可以使用针对性的代码进行处理。 如：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java-异常">
+<meta property="og:url" content="http://example.com/2023/06/02/Java10%E5%BC%82%E5%B8%B8/index.html">
+<meta property="og:site_name" content="Icyhaloの糖果屋">
+<meta property="og:description" content="异常在 Java 语言中，将程序执行中发生的不正常情况称为 “异常”（开发过程中的语法错误和逻辑错误不是异常） 这些 异常事件 可分为两类：  Error（错误）：Java 虚拟机无法解决的严重问题。 如：JVM 系统内部错误，资源耗尽等严重情况。Error 是严重错误，程序会崩溃。  Exception（异常）：其他因编程错误或偶然的外部因素导致的一般性问题，可以使用针对性的代码进行处理。 如：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg">
+<meta property="article:published_time" content="2023-06-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-02-28T13:21:14.169Z">
+<meta property="article:author" content="冰晕">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="异常">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/06/02/Java10%E5%BC%82%E5%B8%B8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":100},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 冰晕","link":"链接: ","source":"来源: Icyhaloの糖果屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Java-异常',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-02-28 21:21:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://www.fomal.cc/static/css/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/FeeCpEnVIAAPn7.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">46</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Icyhaloの糖果屋"><span class="site-name">Icyhaloの糖果屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Java-异常</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-01T16:00:00.000Z" title="发表于 2023-06-02 00:00:00">2023-06-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-02-28T13:21:14.169Z" title="更新于 2024-02-28 21:21:14">2024-02-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Java-异常"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><p>在 Java 语言中，将程序执行中发生的不正常情况称为 “异常”（开发过程中的语法错误和逻辑错误不是异常）</p>
+<p>这些 异常事件 可分为两类：</p>
+<ol>
+<li><p>Error（错误）：Java 虚拟机无法解决的严重问题。</p>
+<p>如：JVM 系统内部错误，资源耗尽等严重情况。Error 是严重错误，程序会崩溃。</p>
+</li>
+<li><p>Exception（异常）：其他因编程错误或偶然的外部因素导致的一般性问题，可以使用针对性的代码进行处理。</p>
+<p>如：空指针访问，试图读取不存在的文件，网络中断等等。</p>
+<p>Exception 又分为两大类：</p>
+<ul>
+<li>运行时异常（程序运行时，发生的异常）</li>
+<li>编译时异常（编程时，编译器检查出的异常，会爆红）</li>
+</ul>
+</li>
+</ol>
+<h2 id="异常体系图"><a href="#异常体系图" class="headerlink" title="异常体系图"></a>异常体系图</h2><p><img src="https://raw.githubusercontent.com/icyhalo/picgo/main/%25E5%25BC%2582%25E5%25B8%25B8%25E4%25BD%2593%25E7%25B3%25BB%25E5%259B%25BE_11.1.webp"></p>
+<p>异常分为两大类：运行时异常 和 编译时异常</p>
+<ul>
+<li><p>运行时异常，编译器不要求强制处置的异常。一般是指编程的逻辑错误，是程序员应该避免其出现的异常。</p>
+<p>java.lang.RuntimeException 类及它的子类都是运行时异常</p>
+<p>对于运行时异常，可以不做处理。因为这类异常很普遍，若全处理会对程序的可读性和运行效率产生影响</p>
+</li>
+<li><p>编译时异常，是编译器要求必须处置的异常</p>
+</li>
+</ul>
+<h2 id="常见的运行时异常"><a href="#常见的运行时异常" class="headerlink" title="常见的运行时异常"></a>常见的运行时异常</h2><p>常见的运行时异常（RuntimeException）包括</p>
+<ol>
+<li><p>NullPointerException：空指针异常</p>
+<ul>
+<li><p>当应用程序试图在需要对象的地方使用 null 时，抛出该异常</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = null;</span><br><span class="line">int n = str.length;					//这里，出现了 空指针异常</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>ArithmeticException：数学运算异常</p>
+<ul>
+<li><p>当出现异常的运算条件时，抛出该异常。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">double n = 100 / 0;					//这里，出现了 数学运算异常</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>ArrayIndexOutOfBoundsException：数组下标越界异常</p>
+<ul>
+<li><p>用非法索引（为负或超出范围）访问数组时，抛出该异常</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int[] nums = &#123;0, 0, 0, 0&#125;;</span><br><span class="line">nums[-50] = 100;					//这里，出现了 数组下标越界异常</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>ClassCastException：类型转换异常</p>
+<ul>
+<li><p>当试图把对象强制转换为不是实例的子类时，抛出该异常</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Example &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        A a1 = new A1();</span><br><span class="line">        A2 a1 = (A2)a1;				//这里，出现了 类型转换异常</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class A &#123;&#125;</span><br><span class="line">class A1 extends A &#123;&#125;</span><br><span class="line">class A2 extends A &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>NumberFormatException：数学格式异常</p>
+<ul>
+<li><p>当应用程序试图将字符串转成一种数值类型，但该字符串不能转换为适当格式时，抛出该异常。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;ABC&quot;;</span><br><span class="line">int num = Integer.parseInt(str);	//这里，出现了 数字格式不正确异常</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="常见的编译异常"><a href="#常见的编译异常" class="headerlink" title="常见的编译异常"></a>常见的编译异常</h2><p>常见的编译异常：一般发生在网络、文件、数据库操作中。</p>
+<ul>
+<li>SQLException：操作数据库时，查询表可能发生异常</li>
+<li>IOException：操作文件时，发生的异常</li>
+<li>FileNotFoundException：操作一个不存在的文件时，发生的异常</li>
+<li>ClassNotFoundException：加载类，而该类不存在时，发生的异常</li>
+<li>EOFException：操作文件，到文档末尾，发生的异常</li>
+<li>IllegalArguementException：参数异常</li>
+</ul>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><p>异常发生时，对异常的处理方式。如果没有显式异常处理，默认处理方式是 <code>throws</code></p>
+<blockquote>
+<ul>
+<li><code>try - chatch - finally</code>：程序员在代码中捕获发生的异常，自行处理</li>
+<li><code>throws</code>：将发生的异常抛出，交给调用者（方法）来处理。最顶级的处理者就是 JVM</li>
+</ul>
+</blockquote>
+<h2 id="try-chatch-finally"><a href="#try-chatch-finally" class="headerlink" title="try - chatch - finally"></a>try - chatch - finally</h2><p>Java 提供 try 和 catch 块 来处理异常。try 块用于包含可能出错的代码，catch 块用于处理 try 块中的异常。可以根据需要在程序中有多个 <code>try - catch</code> 块。</p>
+<p>基本语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">	//可疑代码</span><br><span class="line">	//将异常生成对应的异常对象，传递给 catch 块</span><br><span class="line">&#125; catch(Exception e) &#123;</span><br><span class="line">	//如果发生异常，执行这些代码</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">    //无论是否异常，都执行这些代码</span><br><span class="line">    //finally 块可以不写</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用细节"><a href="#使用细节" class="headerlink" title="使用细节"></a>使用细节</h4><ol>
+<li><p>如果异常发生了，则异常发生后面的代码块都不执行，直接进入 catch 块</p>
+</li>
+<li><p>如果异常未发生，则顺序执行 try 代码块，catch 块不执行</p>
+</li>
+<li><p>如果希望不管是否异常，都执行一些代码，则使用 finally</p>
+</li>
+<li><p>可以有多个 catch 捕获不同的异常。要求 子类异常在前，父类异常在后。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">	...</span><br><span class="line">&#125; catch (NullPointerException e) &#123;</span><br><span class="line">	...</span><br><span class="line">&#125; catch (ArithmeticException e) &#123;</span><br><span class="line">	...</span><br><span class="line">&#125; catch (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">	...</span><br><span class="line">&#125; catch (Exception e)&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以进行 try - finally 配合使用（不写 catch）。这种用法相当于没有捕获异常，此时程序如果出错会直接退出。</p>
+<p>应用场景，就是写一段代码，不管是否发生异常，都必须执行某个业务逻辑。</p>
+</li>
+<li><p>如果没有出现异常，执行 try 中所有语句，不执行 catch 语句，最后执行 finally 语句</p>
+</li>
+<li><p>如果出现异常，则 try 块异常发生后，剩余语句不执行。之后执行 catch 语句，最后，执行 finally 语句。</p>
+</li>
+</ol>
+<p>例子：如果用户输入的不是一个整数，就提示他反复输入，直到输入一个整数为止</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package org.example;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner scanner = new Scanner(System.in);</span><br><span class="line">        int num;</span><br><span class="line">        String str = new String();</span><br><span class="line">        while (true)&#123;</span><br><span class="line">            System.out.println(&quot;请输入&quot;);</span><br><span class="line">            str = scanner.next();</span><br><span class="line">            try&#123;</span><br><span class="line">                num = Integer.parseInt(str);</span><br><span class="line">                break;</span><br><span class="line">            &#125;catch (NumberFormatException e)&#123;</span><br><span class="line">                System.out.println(&quot;warring&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="throws"><a href="#throws" class="headerlink" title="throws"></a>throws</h2><p>如果一个方法可能生成某种异常，但是并不能确定如何处理这种异常，则此方法应显式地声明抛出异常，表明该方法将不对这些异常进行处理，而由调用者负责处理</p>
+<p>在方法中声明 <code>throws</code> 语句可以声明抛出异常的列表。<code>throws</code> 后面的异常类型可以是方法中产生的异常类型，也可以是它的父类。</p>
+<p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void metord() throws FileNontFoundException ,NullPointerException &#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/202309181432554.png"></p>
+<blockquote>
+<p>除了JVM层，每一层都能选择使用try还是throws，到JVM就直接报红错误。</p>
+<p>下面层中，每一层二选一处理。</p>
+</blockquote>
+<p>使用细节：</p>
+<ol>
+<li>对于 <strong>编译异常</strong>，程序中必须处理。</li>
+<li>对于 <strong>运行异常</strong>，程序中诺没有处理，默认处理是 <code>throws</code></li>
+<li>子类 重写 父类方法时，子类方法抛出的异常类型必须和父类一致，或者是父类抛出异常类型的子类型。</li>
+<li>如果有 <code>try - catch</code> 就不必 <code>throws</code> 了</li>
+</ol>
+<h1 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h1><p>当程序中出现了某些 “错误”，但该信息并未在 <code>Throwable</code> 子类中描述处理，这时候可以自己设计异常类，用于描述该错误信息</p>
+<p>过程：</p>
+<ol>
+<li>定义类：自定义异常类名，继承 RuntimeException 或 Exception</li>
+<li>如果继承 Exception，属于 编译异常。</li>
+<li>如果继承 RuntimeException，属于 运行异常。（一般来说，选这个。这样利用了默认处理机制throws，更方便）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Metords &#123;</span><br><span class="line">   public void method() &#123;</span><br><span class="line">       int n = 10;</span><br><span class="line">       if(n &gt; 100)&#123;</span><br><span class="line">           throw new CustomException(&quot;不能大于100&quot;);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class CustomException extends RuntimeException &#123;</span><br><span class="line">public CustomException(String message) &#123;</span><br><span class="line">	super(message);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="throw-和-throws"><a href="#throw-和-throws" class="headerlink" title="throw 和 throws"></a>throw 和 throws</h1><table>
+<thead>
+<tr>
+<th></th>
+<th>意义</th>
+<th>位置</th>
+<th>后面跟的东西</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>throws</code></td>
+<td>异常处理的一种方式</td>
+<td>方法声明时</td>
+<td>异常类型</td>
+</tr>
+<tr>
+<td><code>throw</code></td>
+<td>手动生成异常对象关键字</td>
+<td>方法体中</td>
+<td>异常对象</td>
+</tr>
+</tbody></table>
+<p>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="编程小技巧编写异常时，先确定正确的情况，然后取反。这样写，你的思路就不乱。"><a href="#编程小技巧编写异常时，先确定正确的情况，然后取反。这样写，你的思路就不乱。" class="headerlink" title="编程小技巧编写异常时，先确定正确的情况，然后取反。这样写，你的思路就不乱。"></a>编程小技巧编写异常时，先确定正确的情况，然后取反。这样写，你的思路就不乱。</h3></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">冰晕</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/06/02/Java10%E5%BC%82%E5%B8%B8/">http://example.com/2023/06/02/Java10%E5%BC%82%E5%B8%B8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Icyhaloの糖果屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a><a class="post-meta__tags" href="/tags/%E5%BC%82%E5%B8%B8/">异常</a></div><div class="post_share"><div class="social-share" data-image="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/05/31/Java09%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="Java-字符串"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Java-字符串</div></div></a></div><div class="next-post pull-right"><a href="/2023/06/15/Java11JDBC/" title="Java-JDBC"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/005CgOGzgy1hfteeqe0s5j318g0p0gtm.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Java-JDBC</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/05/05/Java00%E5%85%B3%E9%94%AE%E5%AD%97/" title="Java-关键字"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/005CgOGzly1h7oldw1gqsj315o15owld.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-05</div><div class="title">Java-关键字</div></div></a></div><div><a href="/2023/05/07/Java01%E5%8F%98%E9%87%8F/" title="Java-变量、数据类型"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-07</div><div class="title">Java-变量、数据类型</div></div></a></div><div><a href="/2023/05/07/Java02%E6%93%8D%E4%BD%9C%E7%AC%A6/" title="Java-运算符"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-07</div><div class="title">Java-运算符</div></div></a></div><div><a href="/2023/05/07/Java03%E7%BB%93%E6%9E%84/" title="Java-流程结构"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-07</div><div class="title">Java-流程结构</div></div></a></div><div><a href="/2023/05/10/Java04%E6%95%B0%E7%BB%84/" title="Java-数组"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/1562394500344.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-10</div><div class="title">Java-数组</div></div></a></div><div><a href="/2023/05/16/Java06%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7/" title="Java-面向对象特性"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/102972823.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-16</div><div class="title">Java-面向对象特性</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/FeeCpEnVIAAPn7.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">冰晕</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">46</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/"><i class="fab fa-github"></i><span>前往糖果屋</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8"><span class="toc-number">1.</span> <span class="toc-text">异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E4%BD%93%E7%B3%BB%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">异常体系图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8"><span class="toc-number">1.2.</span> <span class="toc-text">常见的运行时异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BC%96%E8%AF%91%E5%BC%82%E5%B8%B8"><span class="toc-number">1.3.</span> <span class="toc-text">常见的编译异常</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#try-chatch-finally"><span class="toc-number">2.1.</span> <span class="toc-text">try - chatch - finally</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%BB%86%E8%8A%82"><span class="toc-number">2.1.0.1.</span> <span class="toc-text">使用细节</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#throws"><span class="toc-number">2.2.</span> <span class="toc-text">throws</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8"><span class="toc-number">3.</span> <span class="toc-text">自定义异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#throw-%E5%92%8C-throws"><span class="toc-number">4.</span> <span class="toc-text">throw 和 throws</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%B0%8F%E6%8A%80%E5%B7%A7%E7%BC%96%E5%86%99%E5%BC%82%E5%B8%B8%E6%97%B6%EF%BC%8C%E5%85%88%E7%A1%AE%E5%AE%9A%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%83%85%E5%86%B5%EF%BC%8C%E7%84%B6%E5%90%8E%E5%8F%96%E5%8F%8D%E3%80%82%E8%BF%99%E6%A0%B7%E5%86%99%EF%BC%8C%E4%BD%A0%E7%9A%84%E6%80%9D%E8%B7%AF%E5%B0%B1%E4%B8%8D%E4%B9%B1%E3%80%82"><span class="toc-number">4.0.1.</span> <span class="toc-text">编程小技巧编写异常时，先确定正确的情况，然后取反。这样写，你的思路就不乱。</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/12/14/SpringSecurity%E4%BD%BF%E7%94%A8/" title="SpringSecurity使用"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringSecurity使用"/></a><div class="content"><a class="title" href="/2023/12/14/SpringSecurity%E4%BD%BF%E7%94%A8/" title="SpringSecurity使用">SpringSecurity使用</a><time datetime="2023-12-13T16:00:00.000Z" title="发表于 2023-12-14 00:00:00">2023-12-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/04/SpringBoot%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/" title="SpringBoot-基本使用"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot-基本使用"/></a><div class="content"><a class="title" href="/2023/12/04/SpringBoot%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/" title="SpringBoot-基本使用">SpringBoot-基本使用</a><time datetime="2023-12-04T08:33:44.002Z" title="发表于 2023-12-04 16:33:44">2023-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/18/SpringBoot%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="SpringBoot基本使用"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot基本使用"/></a><div class="content"><a class="title" href="/2023/11/18/SpringBoot%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="SpringBoot基本使用">SpringBoot基本使用</a><time datetime="2023-11-18T11:37:50.578Z" title="发表于 2023-11-18 19:37:50">2023-11-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By 冰晕</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Java/&quot;);" href="javascript:void(0);">Java</a><span class="categoryBar-list-count">18</span><span class="categoryBar-list-descr">各类主流的编程语言</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/框架/&quot;);" href="javascript:void(0);">框架</a><span class="categoryBar-list-count">15</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/必看/&quot;);" href="javascript:void(0);">必看</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/408/&quot;);" href="javascript:void(0);">408</a><span class="categoryBar-list-count">6</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/数据库/&quot;);" href="javascript:void(0);">数据库</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JVM/&quot;);" href="javascript:void(0);">JVM</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/MySQL/&quot;);" href="javascript:void(0);">MySQL</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-66ccff?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Vercel" title=""><img src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于4EVERLAND" title=""><img src="https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '2');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>

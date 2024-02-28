@@ -1,0 +1,533 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>计算机网络-物理层 | Icyhaloの糖果屋</title><meta name="author" content="冰晕"><meta name="copyright" content="冰晕"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="物理层的基本概念 传输方式：在计算机网络中，用来连接各种网络设备的传输媒体种类众多，大致分为两类  导引型传输媒体 非导引型传输媒体  物理层协议的主要任务:  机械特性 指明接口所用接线器的形状和尺寸、引脚数目和排列、固定和锁定装置。  电气特性 指明在接口电缆的各条线上出现的电压的范围。  功能特性 指明某条线上出现的某一电平的电压表示何种意义。  过程特性 指明对于不同功能的各种可能事件的出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-物理层">
+<meta property="og:url" content="http://example.com/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.4/index.html">
+<meta property="og:site_name" content="Icyhaloの糖果屋">
+<meta property="og:description" content="物理层的基本概念 传输方式：在计算机网络中，用来连接各种网络设备的传输媒体种类众多，大致分为两类  导引型传输媒体 非导引型传输媒体  物理层协议的主要任务:  机械特性 指明接口所用接线器的形状和尺寸、引脚数目和排列、固定和锁定装置。  电气特性 指明在接口电缆的各条线上出现的电压的范围。  功能特性 指明某条线上出现的某一电平的电压表示何种意义。  过程特性 指明对于不同功能的各种可能事件的出">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg">
+<meta property="article:published_time" content="2023-04-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-02-28T08:58:48.264Z">
+<meta property="article:author" content="冰晕">
+<meta property="article:tag" content="408">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":100},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 冰晕","link":"链接: ","source":"来源: Icyhaloの糖果屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机网络-物理层',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-02-28 16:58:48'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://www.fomal.cc/static/css/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/FeeCpEnVIAAPn7.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">46</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Icyhaloの糖果屋"><span class="site-name">Icyhaloの糖果屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络-物理层</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-26T16:00:00.000Z" title="发表于 2023-04-27 00:00:00">2023-04-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-02-28T08:58:48.264Z" title="更新于 2024-02-28 16:58:48">2024-02-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/408/">408</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="计算机网络-物理层"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="物理层的基本概念"><a href="#物理层的基本概念" class="headerlink" title="物理层的基本概念"></a>物理层的基本概念</h1><p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606155648.png"></p>
+<p>传输方式：在计算机网络中，用来连接各种网络设备的传输媒体种类众多，大致分为两类</p>
+<ol>
+<li>导引型传输媒体</li>
+<li>非导引型传输媒体</li>
+</ol>
+<p>物理层协议的主要任务:</p>
+<ol>
+<li><p>机械特性</p>
+<p>指明接口所用接线器的形状和尺寸、引脚数目和排列、固定和锁定装置。</p>
+</li>
+<li><p>电气特性</p>
+<p>指明在接口电缆的各条线上出现的电压的范围。</p>
+</li>
+<li><p>功能特性</p>
+<p>指明某条线上出现的某一电平的电压表示何种意义。</p>
+</li>
+<li><p>过程特性</p>
+<p>指明对于不同功能的各种可能事件的出现顺序。</p>
+</li>
+</ol>
+<p>物理连接方式：点对点，广播连接等。物理层协议种类比较多，每种物理层协议都包含了上述四个任务的具体内容。</p>
+<blockquote>
+<p>物理层考虑的是怎样才能在连接各种计算机的传输媒体,上传输数据比特流。</p>
+</blockquote>
+<p>物理层为数据链路层屏蔽了各种传输媒体的差异，使数据链路层只需要考虑如何完成本层的协议和服务,而不必考虑网络具体的传输媒体是什么。</p>
+<h1 id="物理层下面的传输媒体"><a href="#物理层下面的传输媒体" class="headerlink" title="物理层下面的传输媒体"></a>物理层下面的传输媒体</h1><p>传输媒体大致分为两类</p>
+<ol>
+<li>导引型传输媒体</li>
+<li>非导引型传输媒体</li>
+</ol>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606160834.png"></p>
+<h2 id="导引型传输媒体"><a href="#导引型传输媒体" class="headerlink" title="导引型传输媒体"></a>导引型传输媒体</h2><h3 id="同轴电缆"><a href="#同轴电缆" class="headerlink" title="同轴电缆"></a>同轴电缆</h3><p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606161056.png"></p>
+<ul>
+<li>基带同轴电缆( 50 Ω )：数字传输，过去用于局域网</li>
+<li>宽带同轴电缆( 75 Ω )：模拟传输，目前主要用于有线电视</li>
+</ul>
+<p>同轴电缆价格较贵且布线不够灵活和方便，随着集线器的出现，在局域网领域基本上都是采用双绞线作为传输媒体。</p>
+<h3 id="双绞线（网线）"><a href="#双绞线（网线）" class="headerlink" title="双绞线（网线）"></a>双绞线（网线）</h3><p>把两根相互绝缘的铜导线并排放在一起。然后按照一定规则绞合起来就构成了双绞线</p>
+<p>绞合的作用：</p>
+<ol>
+<li>抵御部分来自外界的电磁波干扰</li>
+<li>减少相邻导线的电磁干扰</li>
+</ol>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606161428.png"></p>
+<h3 id="光纤"><a href="#光纤" class="headerlink" title="光纤"></a>光纤</h3><p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606161524.png"></p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606162348.png"></p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606162429.png"></p>
+<p>工作原理：当光从高折射率的媒体射向低折射率的媒体时，其折射角将大于入射角;因此，如果入射角足够大，就会出现全反射，即光碰到包层时，就会反射回纤芯。</p>
+<p>纤芯直径：</p>
+<ol>
+<li>多模光纤：50微米，62.5微米</li>
+<li>单模光纤：9微米</li>
+</ol>
+<p>工作波长：</p>
+<ol>
+<li>0.85微米</li>
+<li>1.3 微米</li>
+<li>1.55微米</li>
+</ol>
+<p>光纤优点：</p>
+<ol>
+<li>通信容量大(25000~ 30000GHz的带宽)</li>
+<li>传输损耗小，远距离传输时更加经济。</li>
+<li>抗雷电和电磁子扰性能好。这在大电流脉冲抗雷电和电磁子扰性能好。这在大电流脉冲</li>
+<li>无串音干扰，保密性好，不易被窃听。</li>
+<li>体积小，重量轻。</li>
+</ol>
+<p>光纤缺点：</p>
+<ol>
+<li>割接需要专用设备</li>
+<li>光电接口贵</li>
+</ol>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606162621.png"></p>
+<p>多模光纤：</p>
+<p>由于色散(模式、材料、波导色散)， 光在多模光纤中传输一定距离后必然产生信号失真(脉冲展宽)</p>
+<p>因此，多模光纤只适合近距离传输(建筑物内)</p>
+<p>发送光源:发光二极管;接收检测:光电二极管</p>
+<p>单模光纤：</p>
+<p>没有模式色散，在1 .31微米波长附近材料色散和波导色散大小相等符号相反，两者正好抵消。</p>
+<p>单模光纤适合长距离传输且衰减小，但其制造成本高，对光源要求高。</p>
+<p>发送光源:发光二极管;接收检测:光电二极管</p>
+<h3 id="电力线"><a href="#电力线" class="headerlink" title="电力线"></a>电力线</h3><p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606163002.png"></p>
+<p>应用电力线传输信号的实例最早是电力线电话。</p>
+<h2 id="非导引型传输媒体"><a href="#非导引型传输媒体" class="headerlink" title="非导引型传输媒体"></a>非导引型传输媒体</h2><h3 id="微波"><a href="#微波" class="headerlink" title="微波"></a>微波</h3><p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606163144.png"></p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606163313.png"></p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606163449.png"></p>
+<p>微波是直线传播，一般只有五十公里左右，为了实现远距离通信，必须在一条微波通信信道的两个终端之间建立若干个中继站。中继站将前一站送来的信号经过放大后再发送到下一站。称为“接力”。传播时延大</p>
+<h3 id="红外线"><a href="#红外线" class="headerlink" title="红外线"></a>红外线</h3><p>红外线属于点对点无线传输，直线传输，中间不能有障碍物，传输距离短，传输速率低(4Mb&#x2F;s~ 16Mb&#x2F;s)。</p>
+<h3 id="可见光"><a href="#可见光" class="headerlink" title="可见光"></a>可见光</h3><p>LIFI：一种新型光传播方式，还在实验阶段。</p>
+<h1 id="传输方式"><a href="#传输方式" class="headerlink" title="传输方式"></a>传输方式</h1><p>串行传输：是一个比特一个比特传输，因此发送端和传输端之间<strong>只需要一条数据传输线路</strong>即可。</p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606164310.png"></p>
+<p>并行传输：是指一次性传输多个比特，而不是一个比特。接发收端<strong>有 n 条传输线路</strong>。速度是串行传输的n倍，但是成本高。</p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606164452.png"></p>
+<p><strong>计算机内部</strong>常采用<strong>并行传输</strong>的方式（总线）</p>
+<p>计算机之间常采用<strong>串行传输</strong>的方式</p>
+<blockquote>
+<p>远距离传输是串行传输，计算机内部传输是并行传输，常见的数据总线宽度有 8 位，16位，32 位和 64 位。</p>
+</blockquote>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606164650.png"></p>
+<p>同步传输：发送端发送连续不间断的信号，接收端按照时钟频率进行接收，因为接发收端频率不同步，所以会产生一定的时钟误差，那么要需要一些方式来使时钟保持同步。</p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606164918.png"></p>
+<p>由于不同设备的时钟频率存在一定差异，在传输大量数据的过程中，肪产生的判别刻的累计误差会导致接收端对批特信导的判别错位。</p>
+<p>实现收发双方时钟同步的方法：</p>
+<ol>
+<li><p>外同步：两条信号线，一条接收数据信号，一条接收时钟频率信号。</p>
+</li>
+<li><p>内同步：发送端将时钟同步信号编码和发送数据一同发送（传统以太网所采用的就是曼彻斯特编码。）</p>
+</li>
+</ol>
+<p>异步传输：发送数据是有间隔不联系的，接收端仅在每个字节的起始处对字节内的比特实现同步。为此，通常要在每个字节前后分别加上起始位和结束位</p>
+<p><img src="C:\Users\CWL25\AppData\Roaming\Typora\typora-user-images\image-20230606165209094.png" alt="image-20230606165209094"></p>
+<p>异步：字节之间异步(字节之间的时间间隔不固定)，字节中的每个比特仍然要同步(各比特的持续时间是相同的)</p>
+<p>单向通信(单工)：通信双方只有一个数据传输方向。只需要一条信道</p>
+<p>例如。无线电广播采用的就是这种通信方式。</p>
+<p>双向交替通信(半双工)：通信双方可以相互传输数据。但不能同时进行。需要两条信道，来去各一条</p>
+<p>例如。对讲机采用的就是这种通信方式</p>
+<p>双向同时通信(全双工)：通信双方可以同时发送和接收信息。需要两条信道，来去各一条</p>
+<p>例如。 电话采用的就是这种通信方式</p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606171651.png"></p>
+<h1 id="编码与调制"><a href="#编码与调制" class="headerlink" title="编码与调制"></a>编码与调制</h1><p>计算机需要处理和传输用户的文字。图片。音频和视频。它们可以统称为消息。</p>
+<p>信导是数据的电磁表现。由信源发出的原始电信导称为基带信号。</p>
+<p>基带信导可分为两类：</p>
+<ol>
+<li>数字基带信号。例如，计算机内部CPU与内存之间传输的信导。</li>
+<li>模拟基带信号。例如，麦克风收到声音局产生的音频信号</li>
+</ol>
+<p>信号需要在信道中进行传输。</p>
+<p>信道可分为数字信道和模拟信道两种。</p>
+<p>在不改变信导性质的前提下，仅对数字基带信的波开形进行变换。称为编码。编码后产生的信号仍为数字信导，可以在数字信道中传输。</p>
+<p>把数字基带信号的频率范围，搬移到较高的频段。并转换为模拟信导，称为调制。调制后产生的信导是模拟信号，可以在模拟信道中传输。</p>
+<p>例如。WIF使用补码键控、直接序列扩频、正交频分复用等调制方法。</p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606172637.png"></p>
+<p>传输媒体和信道不能直接划等号。对于单工传输，传输媒体中只包含一个信道。要么是发送信道，要么是接收信道。对于半双工和全双工传输。传输媒体中要包含两个信道。一个是发送信道，咼个是接收信道。如果使用信道复用技术。一条传输媒体还可以包含多个信道。</p>
+<p>码元：在使用时间域的波形表示数字信号时,代表不同离散数值的基本波形。</p>
+<h2 id="编码与调制-1"><a href="#编码与调制-1" class="headerlink" title="编码与调制"></a>编码与调制</h2><h3 id="常用编码"><a href="#常用编码" class="headerlink" title="常用编码"></a>常用编码</h3><p>不归零编码：不归零，就是指在整个码元时间肉，电平不会出现零电平</p>
+<p>归零编码</p>
+<p>曼彻斯特编码</p>
+<p>差分曼彻斯特编码</p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606173840.png"></p>
+<h3 id="基本调制方法"><a href="#基本调制方法" class="headerlink" title="基本调制方法"></a>基本调制方法</h3><p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606174456.png"></p>
+<p>因为频率和相位是相关的，即频率是相位随时间的变化率。所以一次只能调制频率和相位两个中的-一个。</p>
+<p>通常情况下，相位和振幅可以结合起来一起调制， 称为正交振幅调制QAM。</p>
+<p>正交振幅调制QAM：</p>
+<p>QAM-16：12种相位，每种相位有1或2种振幅可选，可以调制出16种码元(波形)，每种码元可以对应表示4个比特，每个码元与4个比特的对应关系不能随便定义。码元与4个比特的对应关系采用格雷码</p>
+<h1 id="信道的极限容量"><a href="#信道的极限容量" class="headerlink" title="信道的极限容量"></a>信道的极限容量</h1><p>码间串扰：信号在传输过程中或受到各种因素的影响，一个数字信号通过实际的信道后，波形会产生失真，在失真不严重时，在输出端还可根据已失真的波形还原出发送的码元。在失真严重时，很难判断这个信号是什么时候是 1，什么时候是 0，信号波形失去了码元之间的清晰界限。</p>
+<p>失真因素：</p>
+<ol>
+<li><p>码元传输速率</p>
+</li>
+<li><p>信号传输距离</p>
+</li>
+<li><p>噪声干扰</p>
+</li>
+<li><p>传输媒体质量</p>
+</li>
+</ol>
+<p>奈氏准则：在假定的理想条件下，为了避免码间串扰，码元传输速率是有上限的。</p>
+<p>理想低通信道的最高码元传输速率&#x3D; 2W Baud &#x3D; 2W 码元&#x2F;秒</p>
+<p>理想带通信道的最高码元传输速率&#x3D; W Baud &#x3D; W 码元&#x2F;秒</p>
+<p>W ：信道带宽(单位为Hz)</p>
+<p>Baud ：波特，即码元&#x2F;秒</p>
+<p>码元传输速率又称为波特率、调制速率、波形速率或符号速率。它与比特率有一定关系:</p>
+<ol>
+<li>当1个码元只携带1比特的信息量时，则波特率(码元&#x2F;秒)与比特率(此特&#x2F;秒)在数值上是相等的;</li>
+<li>当1个码元携带n比特的信息量时，则波特率转换成比特率时,数值要乘以n。</li>
+</ol>
+<p>要提高信息传输速率(比特率)，就必须设法使每一个码元能携带更多个比特的信息量。这需要采用多元制。</p>
+<p>实际的信道所能传输的最高码元速率，要明显低于奈氏准则给出的这个，上限数值。</p>
+<p><strong>香农公式</strong>：带宽受限且有高斯白噪声干扰的信道的极限信息传输速率。</p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606182307.png"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606182141.png"></p>
+<p>信道带宽或信道中信噪比越大，信息的极限传输速率越高。</p>
+<p>在实际信道上能够达到的信息传输速率要比该公式的极限传输速率低不少。这是因为在实际信道中，信号还要受到其他些损伤，如各种脉冲干扰、信号在传输中的衰减和失真些损伤，如各种脉冲干扰、信号在传输中的衰减和失真</p>
+<p>在信道带宽一定的情况下， 根据奈氏准则和香农公式，要想提高信息的传输速率就必须采用多元制(更好的调制方法)和努力提高信道中的信噪比。</p>
+<p>自从香农公式发表后，各种新的信号处理和调制方法就不断出现，其目的都是为了尽可能地接近香农公式给出的传输速率极限。</p>
+<p>不管题目给出的调制技术多么“牛或对于我们而言有多陌生，这都不会影响我们解题。我们只需关心这种调制技术可以调制我们只需关心这种调制技术可以调制</p>
+<h1 id="信道复用技术"><a href="#信道复用技术" class="headerlink" title="信道复用技术"></a>信道复用技术</h1><p>复用(Multiplexing) 就是在一条传输媒体.上同时传输多路用户的信号。</p>
+<p>当一条传输媒体的传输容量大于多条信道传输的总容量时，就可以通过复用技术，在这条传输媒体上建立多条通信信道,以便充分利用传输媒体的带宽。</p>
+<p>尽管实现信道复用会增加通信成本(需要复用器、分用器以及费用较高的大容量共享信道) ,但如果复用的信道数量较大，还是比较划算的。</p>
+<h2 id="常见的信道复用技术"><a href="#常见的信道复用技术" class="headerlink" title="常见的信道复用技术"></a>常见的信道复用技术</h2><p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606183608.png"></p>
+<p>FDM：将传输媒体的总频带划分成多个子频带，每个子频带作为一个通信子信道，每对用户使用其中的一个子信道进行通信，各子信道之间需要留出隔离频带，以免造成子信道间的干扰，频分复用的所有用户同时占用不同的频带资源发送数据 。</p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606183758.png"></p>
+<p>频分复用的所有用户同时占用不同的频带资源发送数据</p>
+<p>TDM：将时间划分为一段段等长的时隙，每一个时分复用的用户，在其相应时隙内，独占传输媒体的资源进行通信，时分复用的各用户所对应的时隙就构成了时分复用帧。每个用户占用的时隙是周期性的，其周期就是 TDM 帧的长度。</p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606183925.png"></p>
+<blockquote>
+<p>TDM帧实际上是一段固定长度的时间，它与数据链路层对等实体间逻辑通信的”帧”是完全不同的概念。</p>
+</blockquote>
+<p>时分复用的所有用户在不同的时间占用同样的频带进行通信</p>
+<p>WDM：就是光的频分复用，由频分复用的设计思想，可在一根光纤上同时传输多个频率（波长）相近的光载波信号，实现基于光纤的频分复用技术。</p>
+<blockquote>
+<p>目前可以在一根光纤上复用 80 路或更多路的光载波信号。因此，这种复用技术也称为密集波复用 DWDM。</p>
+</blockquote>
+<p>下图是其物理意义</p>
+<p><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/20230606184142.png"></p>
+<p>铺设光缆的工程耗资巨大，应尽量在一根光缆中放入尽可能多的光纤，然后对每一根光纤使用密集波分复用技术。</p>
+<p>CDM：它是在扩频通信技术的基础上发展起来的一种无线通信技术。与<strong>频分复用</strong>和<strong>时分复用</strong>不同，码分多址的每个用户可以<strong>在相同的时间使用相同的频带进行通信</strong>。</p>
+<p>码分多址最初用于军事通信，这种系统发送的信号有很强的抗干扰能力，其频谱类似于白噪声，不易被敌人发现。随着技术的进步，码分多址设备的价格和体积都大幅度下降，因而现在已广泛用于民用的移动通信中。</p>
+<p>码分多址将每个比特时间划分成为 m 个更短的时间片，称为<strong>码片</strong>。M 的取值通常为 64 或 128.为了简单起见，在后续的举例中，我们假设 m 分取值为 8。码分多址中的每个站点都被指派一个唯一的 <strong>m 比特码片序列。</strong>某个站要<strong>发送比特 1</strong>，则发送它自己的 <strong>m 比特码片序列</strong>。某个站要发送<strong>比特 0</strong>，则发送它自己的 <strong>m 比特码片序列的反码</strong>。</p>
+<p>如果有两个或多个站同时发送数据，则信道中的信号就是这些站各自所发送一系列码片序列或码片序列反码的叠加，为了从信道中分离出每个站的信号，给每个站指派码片序列时，必须遵循以下原则：</p>
+<ol>
+<li>分配给每个站的<strong>码片序列必须各不相同</strong>，实际常采用伪随机码序列。</li>
+<li>分配给每个站的<strong>码片序列必须相互正交</strong>，即各码片序列相应的码片向量之间的<strong>规格化内积为 0</strong></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">冰晕</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.4/">http://example.com/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Icyhaloの糖果屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/408/">408</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></div><div class="post_share"><div class="social-share" data-image="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/16/hello-world/" title="至每一个来到这里的人"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/TEHSN5228DVNJ0IKG8LMEF5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">至每一个来到这里的人</div></div></a></div><div class="next-post pull-right"><a href="/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.2/" title="计算机网络-应用层"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计算机网络-应用层</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.1/" title="计算机网络-引言"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-27</div><div class="title">计算机网络-引言</div></div></a></div><div><a href="/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.3/" title="计算机网络-运输层"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-27</div><div class="title">计算机网络-运输层</div></div></a></div><div><a href="/2023/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.2/" title="计算机网络-应用层"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-27</div><div class="title">计算机网络-应用层</div></div></a></div><div><a href="/2023/05/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.2/" title="数据结构-线性表"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-04</div><div class="title">数据结构-线性表</div></div></a></div><div><a href="/2023/05/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.1/" title="数据结构-绪论"><img class="cover" src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-03</div><div class="title">数据结构-绪论</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/FeeCpEnVIAAPn7.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">冰晕</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">46</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/"><i class="fab fa-github"></i><span>前往糖果屋</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">物理层的基本概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E4%B8%8B%E9%9D%A2%E7%9A%84%E4%BC%A0%E8%BE%93%E5%AA%92%E4%BD%93"><span class="toc-number">2.</span> <span class="toc-text">物理层下面的传输媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%BC%95%E5%9E%8B%E4%BC%A0%E8%BE%93%E5%AA%92%E4%BD%93"><span class="toc-number">2.1.</span> <span class="toc-text">导引型传输媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E8%BD%B4%E7%94%B5%E7%BC%86"><span class="toc-number">2.1.1.</span> <span class="toc-text">同轴电缆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E7%BB%9E%E7%BA%BF%EF%BC%88%E7%BD%91%E7%BA%BF%EF%BC%89"><span class="toc-number">2.1.2.</span> <span class="toc-text">双绞线（网线）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E7%BA%A4"><span class="toc-number">2.1.3.</span> <span class="toc-text">光纤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%8A%9B%E7%BA%BF"><span class="toc-number">2.1.4.</span> <span class="toc-text">电力线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E5%AF%BC%E5%BC%95%E5%9E%8B%E4%BC%A0%E8%BE%93%E5%AA%92%E4%BD%93"><span class="toc-number">2.2.</span> <span class="toc-text">非导引型传输媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%B3%A2"><span class="toc-number">2.2.1.</span> <span class="toc-text">微波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A2%E5%A4%96%E7%BA%BF"><span class="toc-number">2.2.2.</span> <span class="toc-text">红外线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%81%E5%85%89"><span class="toc-number">2.2.3.</span> <span class="toc-text">可见光</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">传输方式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6"><span class="toc-number">4.</span> <span class="toc-text">编码与调制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6-1"><span class="toc-number">4.1.</span> <span class="toc-text">编码与调制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BC%96%E7%A0%81"><span class="toc-number">4.1.1.</span> <span class="toc-text">常用编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%B0%83%E5%88%B6%E6%96%B9%E6%B3%95"><span class="toc-number">4.1.2.</span> <span class="toc-text">基本调制方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%B9%E9%87%8F"><span class="toc-number">5.</span> <span class="toc-text">信道的极限容量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">6.</span> <span class="toc-text">信道复用技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BF%A1%E9%81%93%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">6.1.</span> <span class="toc-text">常见的信道复用技术</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/12/14/SpringSecurity%E4%BD%BF%E7%94%A8/" title="SpringSecurity使用"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringSecurity使用"/></a><div class="content"><a class="title" href="/2023/12/14/SpringSecurity%E4%BD%BF%E7%94%A8/" title="SpringSecurity使用">SpringSecurity使用</a><time datetime="2023-12-13T16:00:00.000Z" title="发表于 2023-12-14 00:00:00">2023-12-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/04/SpringBoot%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/" title="SpringBoot-基本使用"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot-基本使用"/></a><div class="content"><a class="title" href="/2023/12/04/SpringBoot%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/" title="SpringBoot-基本使用">SpringBoot-基本使用</a><time datetime="2023-12-04T08:33:44.002Z" title="发表于 2023-12-04 16:33:44">2023-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/18/SpringBoot%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="SpringBoot基本使用"><img src="https://icyhalo-picture.oss-cn-wuhan-lr.aliyuncs.com/img-for-blog/7dd0a3a35f174932a8b62f85eed07d34818483c2_rw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot基本使用"/></a><div class="content"><a class="title" href="/2023/11/18/SpringBoot%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="SpringBoot基本使用">SpringBoot基本使用</a><time datetime="2023-11-18T11:37:50.578Z" title="发表于 2023-11-18 19:37:50">2023-11-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By 冰晕</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Java/&quot;);" href="javascript:void(0);">Java</a><span class="categoryBar-list-count">18</span><span class="categoryBar-list-descr">各类主流的编程语言</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/框架/&quot;);" href="javascript:void(0);">框架</a><span class="categoryBar-list-count">15</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/必看/&quot;);" href="javascript:void(0);">必看</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/408/&quot;);" href="javascript:void(0);">408</a><span class="categoryBar-list-count">6</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/数据库/&quot;);" href="javascript:void(0);">数据库</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JVM/&quot;);" href="javascript:void(0);">JVM</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/MySQL/&quot;);" href="javascript:void(0);">MySQL</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-66ccff?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Vercel" title=""><img src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于4EVERLAND" title=""><img src="https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '2');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>
